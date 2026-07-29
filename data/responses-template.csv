@@ -1,0 +1,1 @@
+timestamp,sessionId,nickname,questionId,selectedAnswer,confidence,actualAnswer,correct,probabilityOfTrue,brierScore

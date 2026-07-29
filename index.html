@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Practice matching your confidence to what you actually know."
+    />
+    <title>Credence — A calibration game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Credence home">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span>Credence</span>
+        </a>
+        <span class="eyebrow">Calibration practice</span>
+      </header>
+
+      <main>
+        <section id="loading-view" class="card status-card" aria-live="polite">
+          <div class="spinner" aria-hidden="true"></div>
+          <p>Loading today’s questions…</p>
+        </section>
+
+        <section id="start-view" class="hero card" hidden>
+          <div class="hero-copy">
+            <p class="kicker">Know what you know</p>
+            <h1>How sure are you, really?</h1>
+            <p class="lede">
+              Answer true-or-false questions, state your confidence, and learn
+              whether your certainty matches reality.
+            </p>
+          </div>
+
+          <div class="how-it-works" aria-label="How to play">
+            <div><span>01</span><p>Choose true or false</p></div>
+            <div><span>02</span><p>Set confidence from 50–100%</p></div>
+            <div><span>03</span><p>Review your calibration</p></div>
+          </div>
+
+          <form id="start-form" class="start-form">
+            <label for="nickname">Nickname <span>(optional)</span></label>
+            <div class="input-row">
+              <input
+                id="nickname"
+                name="nickname"
+                type="text"
+                maxlength="40"
+                autocomplete="nickname"
+                placeholder="Anonymous player"
+              />
+              <button class="button button-primary" type="submit">
+                Start game
+              </button>
+            </div>
+            <p id="question-count" class="form-note"></p>
+          </form>
+        </section>
+
+        <section id="game-view" class="game-layout" hidden>
+          <div class="progress-panel">
+            <div class="progress-copy">
+              <span id="progress-label">Question 1 of 10</span>
+              <span id="running-score">No score yet</span>
+            </div>
+            <div
+              class="progress-track"
+              role="progressbar"
+              aria-label="Game progress"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <span id="progress-bar"></span>
+            </div>
+          </div>
+
+          <article class="card question-card">
+            <p class="kicker">True or false?</p>
+            <h2 id="question-prompt"></h2>
+
+            <form id="answer-form">
+              <fieldset id="answer-fieldset">
+                <legend class="sr-only">Choose an answer</legend>
+                <div class="answer-options">
+                  <label class="answer-option">
+                    <input type="radio" name="answer" value="true" />
+                    <span>True</span>
+                  </label>
+                  <label class="answer-option">
+                    <input type="radio" name="answer" value="false" />
+                    <span>False</span>
+                  </label>
+                </div>
+
+                <div class="confidence-control">
+                  <div class="confidence-heading">
+                    <label for="confidence">How confident are you?</label>
+                    <output id="confidence-output" for="confidence">70%</output>
+                  </div>
+                  <input
+                    id="confidence"
+                    name="confidence"
+                    type="range"
+                    min="50"
+                    max="100"
+                    value="70"
+                    step="5"
+                  />
+                  <div class="range-labels" aria-hidden="true">
+                    <span>Coin flip</span>
+                    <span>Certain</span>
+                  </div>
+                </div>
+              </fieldset>
+
+              <p id="answer-error" class="error-message" role="alert"></p>
+              <button class="button button-primary button-full" type="submit">
+                Lock in answer
+              </button>
+            </form>
+
+            <div id="feedback" class="feedback" tabindex="-1" hidden>
+              <p id="feedback-verdict" class="feedback-verdict"></p>
+              <h3 id="feedback-title"></h3>
+              <p id="feedback-explanation"></p>
+              <div class="feedback-score">
+                <span>Brier score</span>
+                <strong id="feedback-brier"></strong>
+                <small>Lower is better</small>
+              </div>
+              <button
+                id="next-button"
+                class="button button-primary button-full"
+                type="button"
+              >
+                Next question
+              </button>
+            </div>
+          </article>
+        </section>
+
+        <section id="results-view" hidden>
+          <div class="results-heading">
+            <p class="kicker">Game complete</p>
+            <h1>Your calibration report</h1>
+            <p id="results-summary" class="lede"></p>
+          </div>
+
+          <div class="metric-grid">
+            <article class="card metric">
+              <span>Accuracy</span>
+              <strong id="accuracy-metric">—</strong>
+              <small id="accuracy-detail"></small>
+            </article>
+            <article class="card metric">
+              <span>Mean Brier score</span>
+              <strong id="brier-metric">—</strong>
+              <small>0 is perfect</small>
+            </article>
+            <article class="card metric">
+              <span>Calibration gap</span>
+              <strong id="gap-metric">—</strong>
+              <small>Confidence minus accuracy</small>
+            </article>
+          </div>
+
+          <article class="card calibration-card">
+            <div>
+              <p class="kicker">Confidence check</p>
+              <h2>Were you right as often as you expected?</h2>
+            </div>
+            <div id="calibration-chart" class="calibration-chart"></div>
+          </article>
+
+          <button id="restart-button" class="button button-secondary" type="button">
+            Play again
+          </button>
+        </section>
+
+        <section id="error-view" class="card status-card" hidden>
+          <p class="kicker">Something went wrong</p>
+          <h1>We couldn’t load the game.</h1>
+          <p id="load-error"></p>
+          <button id="retry-button" class="button button-primary" type="button">
+            Try again
+          </button>
+        </section>
+      </main>
+
+      <footer>
+        <p>Good judgment starts with honest uncertainty.</p>
+      </footer>
+    </div>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

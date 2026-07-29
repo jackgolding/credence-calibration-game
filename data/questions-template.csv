@@ -1,0 +1,4 @@
+id,prompt,answer,explanation,active
+q-001,Venus is the hottest planet in our solar system.,TRUE,Venus is hotter than Mercury because its dense atmosphere traps heat.,TRUE
+q-002,The Great Wall of China is visible from the Moon with the naked eye.,FALSE,The wall is too narrow to distinguish from the Moon without magnification.,TRUE
+q-003,An octopus has three hearts.,TRUE,Two pump blood through the gills and one circulates it through the body.,TRUE
