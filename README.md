@@ -99,7 +99,7 @@ branch:
 The site will be available at:
 
 ```text
-https://jackgolding.github.io/credence-calibration-game/
+https://jackgolding.com/credence-calibration-game/
 ```
 
 GitHub may take a few minutes to perform the first deployment.
