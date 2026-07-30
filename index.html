@@ -42,6 +42,90 @@
             <div><span>03</span><p>Review your calibration</p></div>
           </div>
 
+          <aside class="ctr-panel" aria-labelledby="ctr-panel-title">
+            <div class="ctr-panel-copy">
+              <p class="kicker">Why the top 3?</p>
+              <h2 id="ctr-panel-title">Clicks follow a power law</h2>
+              <p>
+                Ranking is not linear: most attention piles onto the first few
+                results. In Backlinko’s analysis of ~4 million Google results,
+                the top 3 organic listings took
+                <strong>54.4%</strong> of all clicks, while #10 averaged about
+                <strong>2.2%</strong>.
+              </p>
+              <p class="ctr-panel-cite">
+                Source:
+                <a
+                  href="https://backlinko.com/google-ctr-stats"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Backlinko, “We Analyzed 4 Million Google Search Results”
+                </a>
+                — average organic CTR by position.
+              </p>
+            </div>
+
+            <figure class="ctr-chart" aria-label="Average organic click-through rate by Google rank">
+              <div class="ctr-chart-bars" role="img" aria-label="Bar chart of CTR for ranks 1 through 10">
+                <div class="ctr-bar top" style="--ctr: 27.6">
+                  <span class="ctr-rank">#1</span>
+                  <span class="ctr-track"><span class="ctr-fill"></span></span>
+                  <span class="ctr-value">27.6%</span>
+                </div>
+                <div class="ctr-bar top" style="--ctr: 15.8">
+                  <span class="ctr-rank">#2</span>
+                  <span class="ctr-track"><span class="ctr-fill"></span></span>
+                  <span class="ctr-value">15.8%</span>
+                </div>
+                <div class="ctr-bar top" style="--ctr: 11.0">
+                  <span class="ctr-rank">#3</span>
+                  <span class="ctr-track"><span class="ctr-fill"></span></span>
+                  <span class="ctr-value">11.0%</span>
+                </div>
+                <div class="ctr-bar" style="--ctr: 8.4">
+                  <span class="ctr-rank">#4</span>
+                  <span class="ctr-track"><span class="ctr-fill"></span></span>
+                  <span class="ctr-value">8.4%</span>
+                </div>
+                <div class="ctr-bar" style="--ctr: 6.3">
+                  <span class="ctr-rank">#5</span>
+                  <span class="ctr-track"><span class="ctr-fill"></span></span>
+                  <span class="ctr-value">6.3%</span>
+                </div>
+                <div class="ctr-bar" style="--ctr: 4.9">
+                  <span class="ctr-rank">#6</span>
+                  <span class="ctr-track"><span class="ctr-fill"></span></span>
+                  <span class="ctr-value">4.9%</span>
+                </div>
+                <div class="ctr-bar" style="--ctr: 3.9">
+                  <span class="ctr-rank">#7</span>
+                  <span class="ctr-track"><span class="ctr-fill"></span></span>
+                  <span class="ctr-value">3.9%</span>
+                </div>
+                <div class="ctr-bar" style="--ctr: 3.1">
+                  <span class="ctr-rank">#8</span>
+                  <span class="ctr-track"><span class="ctr-fill"></span></span>
+                  <span class="ctr-value">3.1%</span>
+                </div>
+                <div class="ctr-bar" style="--ctr: 2.6">
+                  <span class="ctr-rank">#9</span>
+                  <span class="ctr-track"><span class="ctr-fill"></span></span>
+                  <span class="ctr-value">2.6%</span>
+                </div>
+                <div class="ctr-bar" style="--ctr: 2.2">
+                  <span class="ctr-rank">#10</span>
+                  <span class="ctr-track"><span class="ctr-fill"></span></span>
+                  <span class="ctr-value">2.2%</span>
+                </div>
+              </div>
+              <figcaption>
+                Average organic CTR by SERP position. #1 is roughly
+                <strong>10×</strong> more likely to be clicked than #10.
+              </figcaption>
+            </figure>
+          </aside>
+
           <form id="start-form" class="start-form">
             <label for="nickname">Nickname <span>(optional)</span></label>
             <div class="input-row">
@@ -193,6 +277,6 @@
       </footer>
     </div>
 
-    <script type="module" src="src/app.js?v=3"></script>
+    <script type="module" src="src/app.js?v=4"></script>
   </body>
 </html>

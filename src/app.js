@@ -1,11 +1,11 @@
-import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=3";
-import { appendGlossaryText } from "./glossary.js?v=3";
+import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=4";
+import { appendGlossaryText } from "./glossary.js?v=4";
 import {
   calibrationBuckets,
   isCorrectOrder,
   scoreAnswer,
   summarizeAttempts,
-} from "./scoring.js?v=3";
+} from "./scoring.js?v=4";
 
 const elements = {
   loading: document.querySelector("#loading-view"),
