@@ -1,11 +1,11 @@
-import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=5";
-import { appendGlossaryText } from "./glossary.js?v=5";
+import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=6";
+import { appendGlossaryText } from "./glossary.js?v=6";
 import {
   calibrationBuckets,
   isCorrectOrder,
   scoreAnswer,
   summarizeAttempts,
-} from "./scoring.js?v=5";
+} from "./scoring.js?v=6";
 
 const elements = {
   loading: document.querySelector("#loading-view"),
@@ -144,8 +144,15 @@ async function loadQuestions() {
       usingDemoQuestions = true;
     }
 
-    restoreState();
-    routeFromState();
+    try {
+      restoreState();
+      routeFromState();
+    } catch (routeError) {
+      console.warn("Saved progress could not be restored.", routeError);
+      localStorage.removeItem(GAME_CONFIG.storageKey);
+      state = newState();
+      routeFromState();
+    }
   } catch (error) {
     elements.loadError.textContent =
       error instanceof Error ? error.message : "Please try again.";
@@ -154,11 +161,27 @@ async function loadQuestions() {
 }
 
 async function loadLocalQuestions() {
-  const response = await fetch(GAME_CONFIG.localQuestionsUrl, {
-    cache: "no-store",
-  });
-  if (!response.ok) throw new Error("The demo questions could not be loaded.");
-  return validateQuestions(await response.json());
+  const controller = new AbortController();
+  const timeout = window.setTimeout(
+    () => controller.abort(),
+    GAME_CONFIG.requestTimeoutMs,
+  );
+
+  try {
+    const response = await fetch(GAME_CONFIG.localQuestionsUrl, {
+      cache: "no-store",
+      signal: controller.signal,
+    });
+    if (!response.ok) throw new Error("The demo questions could not be loaded.");
+    return validateQuestions(await response.json());
+  } catch (error) {
+    if (error?.name === "AbortError") {
+      throw new Error("Loading questions timed out. Please try again.");
+    }
+    throw error;
+  } finally {
+    window.clearTimeout(timeout);
+  }
 }
 
 function loadJsonp(endpoint) {
@@ -237,6 +260,11 @@ function saveState() {
 }
 
 function routeFromState() {
+  if (!questions.length) {
+    showView(elements.loading);
+    return;
+  }
+
   if (!state.started) {
     elements.nickname.value = state.nickname;
     const sourceNote = usingDemoQuestions ? " · demo mode" : "";
@@ -250,7 +278,17 @@ function routeFromState() {
     return;
   }
 
-  renderQuestion();
+  try {
+    renderQuestion();
+  } catch (error) {
+    console.warn("Could not render the current question.", error);
+    localStorage.removeItem(GAME_CONFIG.storageKey);
+    state = newState();
+    elements.nickname.value = "";
+    const sourceNote = usingDemoQuestions ? " · demo mode" : "";
+    elements.questionCount.textContent = `${questions.length} questions${sourceNote}`;
+    showView(elements.start);
+  }
 }
 
 function updateConfidence() {
@@ -647,8 +685,14 @@ function resetGame({ confirm = false } = {}) {
   }
 
   state = newState();
-  elements.nickname.value = "";
+  if (elements.nickname) elements.nickname.value = "";
   localStorage.removeItem(GAME_CONFIG.storageKey);
+
+  if (!questions.length) {
+    window.location.reload();
+    return;
+  }
+
   routeFromState();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
