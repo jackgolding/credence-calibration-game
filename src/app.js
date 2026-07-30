@@ -1,10 +1,11 @@
-import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js";
-import { appendGlossaryText } from "./glossary.js";
+import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=3";
+import { appendGlossaryText } from "./glossary.js?v=3";
 import {
   calibrationBuckets,
+  isCorrectOrder,
   scoreAnswer,
   summarizeAttempts,
-} from "./scoring.js";
+} from "./scoring.js?v=3";
 
 const elements = {
   loading: document.querySelector("#loading-view"),
@@ -19,6 +20,8 @@ const elements = {
   progressBar: document.querySelector("#progress-bar"),
   progressTrack: document.querySelector(".progress-track"),
   questionPrompt: document.querySelector("#question-prompt"),
+  serpBuilder: document.querySelector("#serp-builder"),
+  builderStatus: document.querySelector("#builder-status"),
   answerForm: document.querySelector("#answer-form"),
   answerFieldset: document.querySelector("#answer-fieldset"),
   confidence: document.querySelector("#confidence"),
@@ -93,6 +96,31 @@ function validateQuestions(payload) {
       prompt: String(question.prompt),
       answer: parseAnswer(question.answer),
       explanation: String(question.explanation || "No explanation provided."),
+      results: validateResults(question.results, index),
+    };
+  });
+}
+
+function validateResults(rawResults, questionIndex) {
+  if (!Array.isArray(rawResults) || rawResults.length !== 3) {
+    throw new Error(`Question ${questionIndex + 1} must have three results.`);
+  }
+
+  return rawResults.map((result, resultIndex) => {
+    if (!result?.id || !result?.title || !result?.link) {
+      throw new Error(
+        `Result ${resultIndex + 1} in question ${questionIndex + 1} is incomplete.`,
+      );
+    }
+
+    return {
+      id: String(result.id),
+      rank: Number(result.rank) || resultIndex + 1,
+      site: String(result.site || "Search result"),
+      title: String(result.title),
+      link: String(result.link),
+      displayUrl: String(result.displayUrl || result.link),
+      snippet: String(result.snippet || ""),
     };
   });
 }
@@ -177,10 +205,16 @@ function restoreState() {
     if (!saved?.sessionId || !Array.isArray(saved.attempts)) return;
 
     const validQuestionIds = new Set(questions.map((question) => question.id));
-    const attemptsAreValid = saved.attempts.every((attempt) =>
-      validQuestionIds.has(attempt.questionId),
+    const attemptsAreValid = saved.attempts.every(
+      (attempt) =>
+        validQuestionIds.has(attempt.questionId) &&
+        Array.isArray(attempt.selectedOrder) &&
+        attempt.selectedOrder.length === 3,
     );
-    if (!attemptsAreValid) return;
+    if (!attemptsAreValid) {
+      localStorage.removeItem(GAME_CONFIG.storageKey);
+      return;
+    }
 
     state = {
       sessionId: String(saved.sessionId),
@@ -238,6 +272,7 @@ function renderQuestion() {
   elements.progressTrack.setAttribute("aria-valuenow", String(Math.round(progress)));
   elements.questionPrompt.replaceChildren();
   appendGlossaryText(elements.questionPrompt, question.prompt);
+  renderSerpBuilder(shuffleResults(question.results, state.currentIndex));
   elements.answerError.textContent = "";
   elements.answerFieldset.disabled = false;
   elements.answerForm.reset();
@@ -245,6 +280,157 @@ function renderQuestion() {
   updateConfidence();
 
   showView(elements.game);
+}
+
+function shuffleResults(results, questionIndex) {
+  const permutations = [
+    [1, 0, 2],
+    [2, 0, 1],
+    [1, 2, 0],
+    [2, 1, 0],
+    [0, 2, 1],
+  ];
+  const order = permutations[questionIndex % permutations.length];
+  return order.map((index) => results[index]);
+}
+
+function renderSerpBuilder(results) {
+  elements.serpBuilder.replaceChildren(
+    ...results.map((result, index) => createSerpResult(result, index, true)),
+  );
+  elements.builderStatus.textContent = "";
+  updateBuilderPositions();
+}
+
+function createSerpResult(result, index, movable = false) {
+  const item = document.createElement("li");
+  item.className = "serp-result";
+  item.dataset.resultId = result.id;
+  item.draggable = movable;
+
+  const position = document.createElement("span");
+  position.className = "serp-position";
+  position.textContent = String(index + 1);
+
+  const content = document.createElement("div");
+  content.className = "serp-result-content";
+
+  const source = document.createElement("div");
+  source.className = "serp-source";
+  const favicon = document.createElement("span");
+  favicon.className = "serp-favicon";
+  favicon.textContent = result.site.charAt(0).toUpperCase();
+  const sourceText = document.createElement("span");
+  const site = document.createElement("strong");
+  appendGlossaryText(site, result.site);
+  const url = document.createElement("small");
+  url.textContent = result.displayUrl;
+  sourceText.append(site, url);
+  source.append(favicon, sourceText);
+
+  const title = document.createElement("h3");
+  title.textContent = result.title;
+  const snippet = document.createElement("p");
+  snippet.textContent = result.snippet;
+  content.append(source, title, snippet);
+
+  item.append(position, content);
+
+  if (movable) {
+    const controls = document.createElement("div");
+    controls.className = "serp-move-controls";
+    controls.append(
+      createMoveButton("up", "↑"),
+      createMoveButton("down", "↓"),
+    );
+    item.append(controls);
+  }
+
+  return item;
+}
+
+function createMoveButton(direction, symbol) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "serp-move-button";
+  button.dataset.move = direction;
+  button.textContent = symbol;
+  return button;
+}
+
+function updateBuilderPositions() {
+  const items = [...elements.serpBuilder.children];
+  items.forEach((item, index) => {
+    item.querySelector(".serp-position").textContent = String(index + 1);
+    item.setAttribute(
+      "aria-label",
+      `Position ${index + 1}: ${item.querySelector(".serp-source strong").textContent}`,
+    );
+
+    const up = item.querySelector('[data-move="up"]');
+    const down = item.querySelector('[data-move="down"]');
+    up.disabled = index === 0;
+    down.disabled = index === items.length - 1;
+    up.setAttribute("aria-label", `Move result at position ${index + 1} up`);
+    down.setAttribute("aria-label", `Move result at position ${index + 1} down`);
+  });
+}
+
+function handleResultMove(event) {
+  const button = event.target.closest("[data-move]");
+  if (!button) return;
+
+  const item = button.closest(".serp-result");
+  const direction = button.dataset.move;
+  const sibling =
+    direction === "up" ? item.previousElementSibling : item.nextElementSibling;
+  if (!sibling) return;
+
+  if (direction === "up") {
+    elements.serpBuilder.insertBefore(item, sibling);
+  } else {
+    elements.serpBuilder.insertBefore(sibling, item);
+  }
+
+  updateBuilderPositions();
+  const position = [...elements.serpBuilder.children].indexOf(item) + 1;
+  elements.builderStatus.textContent = `Moved ${item.querySelector(".serp-source strong").textContent} to position ${position}.`;
+  const requestedButton = item.querySelector(`[data-move="${direction}"]`);
+  const fallbackButton = item.querySelector(
+    `[data-move="${direction === "up" ? "down" : "up"}"]`,
+  );
+  (requestedButton.disabled ? fallbackButton : requestedButton).focus();
+}
+
+function handleResultDragStart(event) {
+  const item = event.target.closest(".serp-result");
+  if (!item) return;
+  event.dataTransfer.effectAllowed = "move";
+  event.dataTransfer.setData("text/plain", item.dataset.resultId);
+  item.classList.add("dragging");
+}
+
+function handleResultDragOver(event) {
+  event.preventDefault();
+  const dragged = elements.serpBuilder.querySelector(".dragging");
+  const target = event.target.closest(".serp-result");
+  if (!dragged || !target || dragged === target) return;
+
+  const targetBounds = target.getBoundingClientRect();
+  const placeAfter = event.clientY > targetBounds.top + targetBounds.height / 2;
+  elements.serpBuilder.insertBefore(
+    dragged,
+    placeAfter ? target.nextElementSibling : target,
+  );
+  updateBuilderPositions();
+}
+
+function handleResultDragEnd(event) {
+  const item = event.target.closest(".serp-result");
+  if (!item) return;
+  item.classList.remove("dragging");
+  const position = [...elements.serpBuilder.children].indexOf(item) + 1;
+  elements.builderStatus.textContent = `Moved ${item.querySelector(".serp-source strong").textContent} to position ${position}.`;
 }
 
 function handleStart(event) {
@@ -257,21 +443,18 @@ function handleStart(event) {
 
 function handleAnswer(event) {
   event.preventDefault();
-  const formData = new FormData(elements.answerForm);
-  const rawAnswer = formData.get("answer");
-
-  if (rawAnswer !== "true" && rawAnswer !== "false") {
-    elements.answerError.textContent = "Choose true or false before continuing.";
-    return;
-  }
-
   const question = questions[state.currentIndex];
-  const selectedAnswer = rawAnswer === "true";
+  const selectedOrder = [...elements.serpBuilder.children].map(
+    (result) => result.dataset.resultId,
+  );
+  const correctOrder = question.results.map((result) => result.id);
+  const orderIsCorrect = isCorrectOrder(selectedOrder, correctOrder);
   const confidence = Number(elements.confidence.value);
-  const score = scoreAnswer(selectedAnswer, confidence, question.answer);
+  const score = scoreAnswer(true, confidence, orderIsCorrect);
   const attempt = {
     questionId: question.id,
-    selectedAnswer,
+    selectedAnswer: orderIsCorrect,
+    selectedOrder,
     confidence,
     probability: score.probability,
     correct: score.correct,
@@ -294,6 +477,7 @@ async function sendResponse(attempt) {
     nickname: state.nickname,
     questionId: attempt.questionId,
     selectedAnswer: attempt.selectedAnswer,
+    selectedOrder: attempt.selectedOrder,
     confidence: attempt.confidence,
   };
 
@@ -379,13 +563,8 @@ function renderAnswerReview() {
     answers.className = "answer-review-answers";
     appendReviewDetail(
       answers,
-      "Your answer",
-      `${attempt.selectedAnswer ? "True" : "False"} · ${attempt.confidence}% confidence`,
-    );
-    appendReviewDetail(
-      answers,
-      "Correct answer",
-      question.answer ? "True" : "False",
+      "Your confidence",
+      `${attempt.confidence}%`,
     );
     appendReviewDetail(
       answers,
@@ -393,14 +572,41 @@ function renderAnswerReview() {
       Number(attempt.brier).toFixed(3),
     );
 
+    const orderComparison = document.createElement("div");
+    orderComparison.className = "answer-order-comparison";
+    const resultsById = new Map(
+      question.results.map((result) => [result.id, result]),
+    );
+    const selectedResults = attempt.selectedOrder
+      .map((id) => resultsById.get(id))
+      .filter(Boolean);
+    orderComparison.append(
+      renderReviewOrder("Your order", selectedResults),
+      renderReviewOrder("Correct order", question.results),
+    );
+
     const explanation = document.createElement("p");
     explanation.className = "answer-review-explanation";
     appendGlossaryText(explanation, question.explanation);
 
     heading.append(number, verdict);
-    item.append(heading, prompt, answers, explanation);
+    item.append(heading, prompt, answers, orderComparison, explanation);
     elements.answerReview.append(item);
   });
+}
+
+function renderReviewOrder(label, results) {
+  const section = document.createElement("section");
+  section.className = "answer-order";
+  const heading = document.createElement("h4");
+  heading.textContent = label;
+  const list = document.createElement("ol");
+  list.className = "serp-builder serp-builder-compact";
+  list.append(
+    ...results.map((result, index) => createSerpResult(result, index)),
+  );
+  section.append(heading, list);
+  return section;
 }
 
 function appendReviewDetail(list, label, value) {
@@ -434,6 +640,10 @@ function restartGame() {
 elements.startForm.addEventListener("submit", handleStart);
 elements.answerForm.addEventListener("submit", handleAnswer);
 elements.confidence.addEventListener("input", updateConfidence);
+elements.serpBuilder.addEventListener("click", handleResultMove);
+elements.serpBuilder.addEventListener("dragstart", handleResultDragStart);
+elements.serpBuilder.addEventListener("dragover", handleResultDragOver);
+elements.serpBuilder.addEventListener("dragend", handleResultDragEnd);
 elements.restartButton.addEventListener("click", restartGame);
 elements.retryButton.addEventListener("click", loadQuestions);
 

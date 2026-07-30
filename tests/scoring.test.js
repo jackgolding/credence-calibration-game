@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import {
   brierScore,
   calibrationBuckets,
+  isCorrectOrder,
   probabilityOfTrue,
   scoreAnswer,
   summarizeAttempts,
@@ -26,6 +27,17 @@ test("scores a selected answer against the outcome", () => {
   assert.equal(result.correct, true);
   assert.ok(Math.abs(result.probability - 0.3) < 1e-12);
   assert.ok(Math.abs(result.brier - 0.09) < 1e-12);
+});
+
+test("checks whether a submitted result order is exact", () => {
+  const correct = ["result-1", "result-2", "result-3"];
+
+  assert.equal(isCorrectOrder([...correct], correct), true);
+  assert.equal(
+    isCorrectOrder(["result-2", "result-1", "result-3"], correct),
+    false,
+  );
+  assert.equal(isCorrectOrder(["result-1", "result-2"], correct), false);
 });
 
 test("summarizes a run", () => {

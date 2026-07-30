@@ -2,63 +2,353 @@
   "questions": [
     {
       "id": "seo-01",
-      "prompt": "For the Google search “poea jobs”, JobStreet ranks higher than WorkAbroad.ph.",
+      "prompt": "Build the top 3 Google results for “poea jobs”",
       "answer": true,
-      "explanation": "JobStreet ranked #3, ahead of WorkAbroad.ph at #5, in PH organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
+      "results": [
+        {
+          "id": "seo-01-result-1",
+          "rank": 1,
+          "site": "POEA Jobs",
+          "title": "POEA Jobs - Find Jobs abroad, Employment and Career Opportunities",
+          "link": "https://poeajobs.ph/",
+          "displayUrl": "poeajobs.ph",
+          "snippet": "POEA Jobs is the easiest way to get your new jobs abroad. Find POEA job orders for agencies job openings, employment, career opportunities and work abroad."
+        },
+        {
+          "id": "seo-01-result-2",
+          "rank": 2,
+          "site": "Department of Migrant Workers",
+          "title": "Approved Job Orders",
+          "link": "https://dmw.gov.ph/archives/v1/approved-job-orders",
+          "displayUrl": "dmw.gov.ph/archives/v1/approved-job-orders",
+          "snippet": "Welcome to the Official Website of Department of Migrant Workers! Approved Job Orders. POEA for processing. job vacancies are still open. SAIPAN MAINTENANCE ..."
+        },
+        {
+          "id": "seo-01-result-3",
+          "rank": 3,
+          "site": "JobStreet",
+          "title": "Poea Jobs in All Countries - Jul 2026 - Jobstreet",
+          "link": "https://ph.jobstreet.com/poea-jobs",
+          "displayUrl": "ph.jobstreet.com/poea-jobs",
+          "snippet": "Find your ideal Poea job at Jobstreet. Explore POEA & DMW-approved work abroad opportunities in all countries. New jobs added daily!"
+        }
+      ],
+      "explanation": "These were the top three organic Google results in the Philippines, captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
       "id": "seo-02",
-      "prompt": "For the Google search “hong kong career advice”, Michael Page ranks higher than Hays.",
-      "answer": false,
-      "explanation": "Hays ranked #1, ahead of Michael Page at #4, in HK organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
+      "prompt": "Build the top 3 Google results for “hong kong career advice”",
+      "answer": true,
+      "results": [
+        {
+          "id": "seo-02-result-1",
+          "rank": 1,
+          "site": "Hays",
+          "title": "Career Advice - Hays Hong Kong",
+          "link": "https://www.hays.com.hk/career-advice",
+          "displayUrl": "hays.com.hk/career-advice",
+          "snippet": "We can help you at all stages of you career whether you're searching for a job, writing your CV, preparing for an interview, starting a job, leaving a job, or ..."
+        },
+        {
+          "id": "seo-02-result-2",
+          "rank": 2,
+          "site": "JobsDB",
+          "title": "Career Advice - Jobsdb Hong Kong",
+          "link": "https://hk.jobsdb.com/career-advice",
+          "displayUrl": "hk.jobsdb.com/career-advice",
+          "snippet": "Career advice made for you. Sign in to get salary insights, job trend data and skills analysis personalised to your career."
+        },
+        {
+          "id": "seo-02-result-3",
+          "rank": 3,
+          "site": "Mind Care Space",
+          "title": "Career Coach Hong Kong",
+          "link": "https://www.mindcarespace.com/en/career-coaching/",
+          "displayUrl": "mindcarespace.com/en/career-coaching",
+          "snippet": "We will provide you with personalized support, career path planning and career guidance. Service rate is HKD 1,200 for a 50-minute session. We provide coaching ..."
+        }
+      ],
+      "explanation": "These were the top three organic Google results in Hong Kong, captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
       "id": "seo-03",
-      "prompt": "For the Google search “nursing jobs in langkawi”, Jora ranks higher than JobStreet.",
+      "prompt": "Build the top 3 Google results for “nursing jobs in langkawi”",
       "answer": true,
-      "explanation": "Jora ranked #1, ahead of JobStreet at #3, in MY organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
+      "results": [
+        {
+          "id": "seo-03-result-1",
+          "rank": 1,
+          "site": "Indeed",
+          "title": "25+ Langkawi Jobs, Employment in Kedah 29 July 2026",
+          "link": "https://malaysia.indeed.com/q-langkawi-l-kedah-jobs.html",
+          "displayUrl": "malaysia.indeed.com/q-langkawi-l-kedah-jobs.html",
+          "snippet": "STAFF NURSE/MEDICAL NURSE/CLINIC ASSISTANT. CHENANG CLINIC CAWANGAN LANGKAWI. Kuah. Professional development. Opportunities for promotion. Maternity leave ..."
+        },
+        {
+          "id": "seo-03-result-2",
+          "rank": 2,
+          "site": "Jora",
+          "title": "Jobs in Langkawi - July 2026 - Jora",
+          "link": "https://my.jora.com/jobs-in-Langkawi",
+          "displayUrl": "my.jora.com/jobs-in-Langkawi",
+          "snippet": "View 219 Jobs in Langkawi at Jora, Full time Diploma or Certificate in Medical Assistant, Assistant Medical Officer, Nursing, or a related healthcare field."
+        },
+        {
+          "id": "seo-03-result-3",
+          "rank": 3,
+          "site": "Facebook",
+          "title": "We are hiring 👨🏻‍⚕️👩🏻‍⚕️Medical Officer 👩🏻‍🏫🧑🏻‍ ...",
+          "link": "https://www.facebook.com/kedahmedical/posts/-we-are-hiring%EF%B8%8F%EF%B8%8Fmedical-officer-state-registered-nurse-srn-call-us-at-04-7744807/2115657141926657/",
+          "displayUrl": "facebook.com/kedahmedical/posts/-we-are-hiring%EF%B8%8F%EF%B8%8Fmedical-officer-state-registered-nurse-srn-call-us-at-04-7744807/2115657141926657",
+          "snippet": "We are expanding a new branch and so does our TEAM! We are hiring QUALIFIED NURSES to join our professional medical team in Confinement Centre."
+        }
+      ],
+      "explanation": "These were the top three organic Google results in Malaysia, captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
       "id": "seo-04",
-      "prompt": "For the Google search “commonwealth bank employee reviews”, Indeed ranks higher than Seek.",
-      "answer": false,
-      "explanation": "Seek ranked #1, ahead of Indeed at #4, in AU organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
+      "prompt": "Build the top 3 Google results for “commonwealth bank employee reviews”",
+      "answer": true,
+      "results": [
+        {
+          "id": "seo-04-result-1",
+          "rank": 1,
+          "site": "Seek",
+          "title": "Reviews CommBank employee ratings and reviews",
+          "link": "https://au.seek.com/companies/commbank-432306/reviews",
+          "displayUrl": "au.seek.com/companies/commbank-432306/reviews",
+          "snippet": "Employees appreciate the friendly and supportive colleagues, flexibility to work from home, and modern technology systems at CommBank."
+        },
+        {
+          "id": "seo-04-result-2",
+          "rank": 2,
+          "site": "Glassdoor",
+          "title": "Commonwealth Bank of Australia Reviews",
+          "link": "https://www.glassdoor.com.au/Reviews/Commonwealth-Bank-of-Australia-Reviews-E7922.htm",
+          "displayUrl": "glassdoor.com.au/Reviews/Commonwealth-Bank-of-Australia-Reviews-E7922.htm",
+          "snippet": "65% of employees would recommend working at Commonwealth Bank of Australia to a friend and 62% have a positive outlook for the business. The best reviews about ..."
+        },
+        {
+          "id": "seo-04-result-3",
+          "rank": 3,
+          "site": "Reddit",
+          "title": "Is CBA good for work/life balance but bad for everything ...",
+          "link": "https://www.reddit.com/r/auscorp/comments/1artsgn/is_cba_good_for_worklife_balance_but_bad_for/",
+          "displayUrl": "reddit.com/r/auscorp/comments/1artsgn/is_cba_good_for_worklife_balance_but_bad_for",
+          "snippet": "Just finished my grad program here and the project that I was in of roughly 250 people had no one aged below 30 aside from the other grads. There were ..."
+        }
+      ],
+      "explanation": "These were the top three organic Google results in Australia, captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
       "id": "seo-05",
-      "prompt": "For the Google search “remote jobs in asia”, LinkedIn ranks higher than JobStreet.",
+      "prompt": "Build the top 3 Google results for “remote jobs in asia”",
       "answer": true,
-      "explanation": "LinkedIn ranked #3, ahead of JobStreet at #6, in SG organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
+      "results": [
+        {
+          "id": "seo-05-result-1",
+          "rank": 1,
+          "site": "Remote Jobs in Asia",
+          "title": "Remote Jobs In Asia",
+          "link": "https://remotejobsinasia.com/",
+          "displayUrl": "remotejobsinasia.com",
+          "snippet": "Find the best paid remote jobs in Asia. Exciting opportunities across Software, Design, IT, Marketing, Finance, HR & Customer support with leading employers in ..."
+        },
+        {
+          "id": "seo-05-result-2",
+          "rank": 2,
+          "site": "Remote Jobs Asia",
+          "title": "Remote Jobs Asia: Recruitment Agency in Singapore for ...",
+          "link": "https://www.remotejobsasia.com/",
+          "displayUrl": "remotejobsasia.com",
+          "snippet": "We are a recruitment agency established in Singapore. We specialise in remote hiring, helping you find the best overseas talents from Asia for your remote jobs."
+        },
+        {
+          "id": "seo-05-result-3",
+          "rank": 3,
+          "site": "LinkedIn",
+          "title": "1000+ Global Remote jobs in Singapore",
+          "link": "https://sg.linkedin.com/jobs/global-remote-jobs",
+          "displayUrl": "sg.linkedin.com/jobs/global-remote-jobs",
+          "snippet": "1,000+ Global Remote Jobs in Singapore · Logistics & Supply Chain Management Expert- Remote · Supply Chain Manager | $50/hr Remote · Interim Country Manager."
+        }
+      ],
+      "explanation": "These were the top three organic Google results in Singapore, captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
       "id": "seo-06",
-      "prompt": "For the Google search “resignation letter”, Hays ranks higher than Fair Work Ombudsman.",
-      "answer": false,
-      "explanation": "Fair Work Ombudsman ranked #1, ahead of Hays at #2, in AU organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
+      "prompt": "Build the top 3 Google results for “resignation letter”",
+      "answer": true,
+      "results": [
+        {
+          "id": "seo-06-result-1",
+          "rank": 1,
+          "site": "Fair Work Ombudsman",
+          "title": "Letter of resignation template",
+          "link": "https://www.fairwork.gov.au/tools-and-resources/templates/letter-of-resignation",
+          "displayUrl": "fairwork.gov.au/tools-and-resources/templates/letter-of-resignation",
+          "snippet": "This tool will help you prepare a resignation letter. The tool will ask you simple questions and use your answers to tailor a letter for you."
+        },
+        {
+          "id": "seo-06-result-2",
+          "rank": 2,
+          "site": "Hays",
+          "title": "How to write a resignation letter",
+          "link": "https://www.hays.com.au/career-advice/career-development/how-to-write-a-resignation-letter",
+          "displayUrl": "hays.com.au/career-advice/career-development/how-to-write-a-resignation-letter",
+          "snippet": "How to write a resignation letter · 1. Record today's date and your contact details: · 2. Address your letter to the right person: · 3. State your intention:."
+        },
+        {
+          "id": "seo-06-result-3",
+          "rank": 3,
+          "site": "ACAS",
+          "title": "Resignation notice letter template",
+          "link": "https://www.acas.org.uk/resignation-letter-template",
+          "displayUrl": "acas.org.uk/resignation-letter-template",
+          "snippet": "Dear [name of manager], Please accept this as notice of my resignation from the position of [your job title] at [business or organisation name]."
+        }
+      ],
+      "explanation": "These were the top three organic Google results in Australia, captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
       "id": "seo-07",
-      "prompt": "For the Google search “how much does a fifo worker make”, Seek ranks higher than Indeed.",
+      "prompt": "Build the top 3 Google results for “how much does a fifo worker make”",
       "answer": true,
-      "explanation": "Seek ranked #2, ahead of Indeed at #5, in AU organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
+      "results": [
+        {
+          "id": "seo-07-result-1",
+          "rank": 1,
+          "site": "Reddit",
+          "title": "Is FIFO pay truly great? : r/AskAnAustralian",
+          "link": "https://www.reddit.com/r/AskAnAustralian/comments/1pk9z27/is_fifo_pay_truly_great/",
+          "displayUrl": "reddit.com/r/AskAnAustralian/comments/1pk9z27/is_fifo_pay_truly_great",
+          "snippet": "Yes you do get a healthy pay packet but work out the hourly rate it doesn’t seem special. 12 hour days, every day. for the two weeks on followed by two ..."
+        },
+        {
+          "id": "seo-07-result-2",
+          "rank": 2,
+          "site": "Seek",
+          "title": "Fifo No Experience Jobs (with Salaries)",
+          "link": "https://au.seek.com/fifo-no-experience-jobs",
+          "displayUrl": "au.seek.com/fifo-no-experience-jobs",
+          "snippet": "Earn $110K+ Year 1. Earn $100K+ in year one, full training provided. $50,000 – $70,000 per year + uncapped commissions. $120K in year one) $5000 ANNUAL. Up to ..."
+        },
+        {
+          "id": "seo-07-result-3",
+          "rank": 3,
+          "site": "Civilsafety",
+          "title": "FIFO Unpacked: Your Ultimate FAQ Guide to FIFO Work",
+          "link": "https://civilsafety.edu.au/blog/fifo-unpacked-your-ultimate-faq-guide-to-fifo-work?srsltid=AfmBOoryfRFUSRy8_Jt5Q4VquYnDQILIlUWp0J5D6RxLWSqZQEzEQsIR",
+          "displayUrl": "civilsafety.edu.au/blog/fifo-unpacked-your-ultimate-faq-guide-to-fifo-work",
+          "snippet": "In 2024, the average salary for FIFO workers is approximately $113,282 per annum or $58.09/hour, which is $39,808 more"
+        }
+      ],
+      "explanation": "These were the top three organic Google results in Australia, captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
       "id": "seo-08",
-      "prompt": "For the Google search “which city in australia has the most job growth”, Facebook ranks higher than Nationwide Visas.",
-      "answer": false,
-      "explanation": "Nationwide Visas ranked #1, ahead of Facebook at #2, in AU organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
+      "prompt": "Build the top 3 Google results for “which city in australia has the most job growth”",
+      "answer": true,
+      "results": [
+        {
+          "id": "seo-08-result-1",
+          "rank": 1,
+          "site": "Nationwide Visas",
+          "title": "Top 10 Australian Cities with the Best Job Prospects",
+          "link": "https://www.nationwidevisas.com/blog/top-10-australian-cities-with-the-best-job-prospects/",
+          "displayUrl": "nationwidevisas.com/blog/top-10-australian-cities-with-the-best-job-prospects",
+          "snippet": "1. Adelaide - South Australia · 2. Brisbane – Queensland · 3. Canberra - The Capital of Australia · 4. Cairns – Queensland · 5. Gold Coast – Queensland · 6. Hobart – ..."
+        },
+        {
+          "id": "seo-08-result-2",
+          "rank": 2,
+          "site": "Facebook",
+          "title": "Darwin has quietly overtaken Australia's major cities as ...",
+          "link": "https://www.facebook.com/TheNTNews/posts/darwin-has-quietly-overtaken-australias-major-cities-as-one-of-the-nations-faste/1590687892406843/",
+          "displayUrl": "facebook.com/TheNTNews/posts/darwin-has-quietly-overtaken-australias-major-cities-as-one-of-the-nations-faste/1590687892406843",
+          "snippet": "The NT's employment to population ratio sits highest at 68.3 per cent, followed by the ACT at 67.6 per cent. On the whole, Australia's ..."
+        },
+        {
+          "id": "seo-08-result-3",
+          "rank": 3,
+          "site": "Reddit",
+          "title": "What are the cities in Australia that are known to have a ...",
+          "link": "https://www.reddit.com/r/AskAnAustralian/comments/pc6g0v/what_are_the_cities_in_australia_that_are_known/",
+          "displayUrl": "reddit.com/r/AskAnAustralian/comments/pc6g0v/what_are_the_cities_in_australia_that_are_known",
+          "snippet": "As a matter of fact , i know that everyone will say Sydney and Melbourne , but i was wondering to know if there are any other cities ? I am thinking seriously ..."
+        }
+      ],
+      "explanation": "These were the top three organic Google results in Australia, captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
       "id": "seo-09",
-      "prompt": "For the Google search “how to write a cover letter”, Youth Central ranks higher than Seek.",
+      "prompt": "Build the top 3 Google results for “how to write a cover letter”",
       "answer": true,
-      "explanation": "Youth Central ranked #1, ahead of Seek at #2, in AU organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
+      "results": [
+        {
+          "id": "seo-09-result-1",
+          "rank": 1,
+          "site": "Youth Central",
+          "title": "How to write a cover letter",
+          "link": "https://www.youthcentral.vic.gov.au/jobs/resumes-and-cover-letters/how-write-cover-letter",
+          "displayUrl": "youthcentral.vic.gov.au/jobs/resumes-and-cover-letters/how-write-cover-letter",
+          "snippet": "What to include in your cover letter · Your name and contact details · Their name and contact details · The name of the job you're going for · A list of your ..."
+        },
+        {
+          "id": "seo-09-result-2",
+          "rank": 2,
+          "site": "Seek",
+          "title": "Free cover letter template",
+          "link": "https://au.seek.com/career-advice/article/free-cover-letter-template",
+          "displayUrl": "au.seek.com/career-advice/article/free-cover-letter-template",
+          "snippet": "You want to open your cover letter by giving the reader a sense of who you are and why you're interested in the role.Alternatively, you could ..."
+        },
+        {
+          "id": "seo-09-result-3",
+          "rank": 3,
+          "site": "University of Melbourne",
+          "title": "Creating your cover letter",
+          "link": "https://eng.unimelb.edu.au/__data/assets/pdf_file/0004/3204679/cover-letter.pdf",
+          "displayUrl": "eng.unimelb.edu.au/__data/assets/pdf_file/0004/3204679/cover-letter.pdf",
+          "snippet": "Opening paragraph • State your purpose for writing. Focus on what has attracted you to this role/company. Show your research. Middle paragraphs"
+        }
+      ],
+      "explanation": "These were the top three organic Google results in Australia, captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
       "id": "seo-10",
-      "prompt": "For the Google search “top earning jobs in malaysia”, Michael Page ranks higher than JobStreet.",
-      "answer": false,
-      "explanation": "JobStreet ranked #3, ahead of Michael Page at #4, in MY organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
+      "prompt": "Build the top 3 Google results for “top earning jobs in malaysia”",
+      "answer": true,
+      "results": [
+        {
+          "id": "seo-10-result-1",
+          "rank": 1,
+          "site": "University of Wollongong Malaysia",
+          "title": "Top 10 Highest Paying Jobs in Malaysia",
+          "link": "https://www.uow.edu.my/blog/highest-paying-jobs-in-malaysia/",
+          "displayUrl": "uow.edu.my/blog/highest-paying-jobs-in-malaysia",
+          "snippet": "Best paying jobs in Malaysia · 1. Head of banking · 2. Medical director · 3. C-suite roles · 4. Surgeon · 5. Lawyers · 6. Engineering Director · 7. Procurement ..."
+        },
+        {
+          "id": "seo-10-result-2",
+          "rank": 2,
+          "site": "JobStreet",
+          "title": "High Salary Jobs in Kuala Lumpur - July 2026 | Jobstreet",
+          "link": "https://my.jobstreet.com/high-salary-jobs/in-Kuala-Lumpur",
+          "displayUrl": "my.jobstreet.com/high-salary-jobs/in-Kuala-Lumpur",
+          "snippet": "Find your ideal job at Jobstreet with 548 High Salary jobs found in Kuala Lumpur. RM 9,000 per month"
+        },
+        {
+          "id": "seo-10-result-3",
+          "rank": 3,
+          "site": "Sunway University Online",
+          "title": "Highest-Paying Jobs in Malaysia in 2026: Salary Guide",
+          "link": "https://studyonline.sunwayuniversity.edu.my/blog/highest-paying-jobs-malaysia",
+          "displayUrl": "studyonline.sunwayuniversity.edu.my/blog/highest-paying-jobs-malaysia",
+          "snippet": "1. Executive Leadership (C-Suite) · 2. Banking & Financial Services · 3. Technology & Digital · 4. Marketing & Agency · 5. Engineering & ..."
+        }
+      ],
+      "explanation": "These were the top three organic Google results in Malaysia, captured via SerpApi on 2026-07-30. Search rankings can change over time."
     }
   ]
 }

@@ -42,6 +42,12 @@ export function scoreAnswer(selectedAnswer, confidencePercent, actualAnswer) {
   };
 }
 
+export function isCorrectOrder(selectedIds, correctIds) {
+  if (!Array.isArray(selectedIds) || !Array.isArray(correctIds)) return false;
+  if (selectedIds.length !== correctIds.length) return false;
+  return selectedIds.every((id, index) => id === correctIds[index]);
+}
+
 /**
  * Group attempts by confidence and compare mean confidence with accuracy.
  */
