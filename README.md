@@ -36,6 +36,20 @@ npm run serve
 Open <http://localhost:4173>. With no Apps Script URL configured, the game uses
 the bundled questions in `data/questions.json` and does not send responses.
 
+## Refresh the SEO questions
+
+Copy `.env.example` to `.env`, add a SerpApi key, then run:
+
+```sh
+npm run generate:seo
+```
+
+The generator searches Google in the country relevant to each query and writes
+10 true-or-false ranking comparisons to `data/questions.json`. It also saves the
+source positions and result URLs in `data/serp-snapshot.json`. Rankings are a
+dated snapshot and can change. The `.env` file is ignored by Git and must never
+be exposed in frontend code.
+
 ## Connect Google Sheets
 
 ### 1. Create the spreadsheet

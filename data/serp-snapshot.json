@@ -1,0 +1,795 @@
+{
+  "capturedAt": "2026-07-30T10:07:13.379Z",
+  "results": [
+    {
+      "query": "poea jobs",
+      "country": "ph",
+      "searchUrl": "https://www.google.com/search?q=poea+jobs&oq=poea+jobs&hl=en&gl=ph&sourceid=chrome&ie=UTF-8",
+      "sites": [
+        {
+          "name": "POEA Jobs",
+          "position": 1,
+          "title": "POEA Jobs - Find Jobs abroad, Employment and Career Opportunities",
+          "link": "https://poeajobs.ph/",
+          "known": false
+        },
+        {
+          "name": "DMW",
+          "position": 2,
+          "title": "Approved Job Orders",
+          "link": "https://dmw.gov.ph/archives/v1/approved-job-orders",
+          "known": false
+        },
+        {
+          "name": "JobStreet",
+          "position": 3,
+          "title": "Poea Jobs in All Countries - Jul 2026 - Jobstreet",
+          "link": "https://ph.jobstreet.com/poea-jobs",
+          "known": true
+        },
+        {
+          "name": "WorkAbroad.ph",
+          "position": 5,
+          "title": "WorkAbroad.ph - Leading overseas job platform in the ...",
+          "link": "https://www.workabroad.ph/",
+          "known": true
+        },
+        {
+          "name": "Indeed",
+          "position": 6,
+          "title": "Hiring Jobs in POEA",
+          "link": "https://ph.indeed.com/l-poea-jobs.html",
+          "known": true
+        },
+        {
+          "name": "Facebook",
+          "position": 7,
+          "title": "POEA Jobs Abroad",
+          "link": "https://www.facebook.com/groups/2984580218491510/",
+          "known": false
+        }
+      ],
+      "comparisonSites": [
+        {
+          "name": "JobStreet",
+          "position": 3,
+          "title": "Poea Jobs in All Countries - Jul 2026 - Jobstreet",
+          "link": "https://ph.jobstreet.com/poea-jobs",
+          "known": true
+        },
+        {
+          "name": "WorkAbroad.ph",
+          "position": 5,
+          "title": "WorkAbroad.ph - Leading overseas job platform in the ...",
+          "link": "https://www.workabroad.ph/",
+          "known": true
+        }
+      ]
+    },
+    {
+      "query": "hong kong career advice",
+      "country": "hk",
+      "searchUrl": "https://www.google.com/search?q=hong+kong+career+advice&oq=hong+kong+career+advice&hl=en&gl=hk&sourceid=chrome&ie=UTF-8",
+      "sites": [
+        {
+          "name": "Hays",
+          "position": 1,
+          "title": "Career Advice - Hays Hong Kong",
+          "link": "https://www.hays.com.hk/career-advice",
+          "known": true
+        },
+        {
+          "name": "Mindcarespace",
+          "position": 2,
+          "title": "Career Coach Hong Kong",
+          "link": "https://www.mindcarespace.com/en/career-coaching/",
+          "known": false
+        },
+        {
+          "name": "UG",
+          "position": 3,
+          "title": "Career Advice | CUHK Undergraduate",
+          "link": "https://ug.bschool.cuhk.edu.hk/career-advice/",
+          "known": false
+        },
+        {
+          "name": "Michael Page",
+          "position": 4,
+          "title": "Career Advice",
+          "link": "https://www.michaelpage.com.hk/advice/career-advice",
+          "known": true
+        },
+        {
+          "name": "JobsDB",
+          "position": 5,
+          "title": "Career Advice - Jobsdb Hong Kong",
+          "link": "https://hk.jobsdb.com/career-advice",
+          "known": true
+        },
+        {
+          "name": "Career",
+          "position": 6,
+          "title": "Home Page - CareER",
+          "link": "https://career.org.hk/",
+          "known": false
+        },
+        {
+          "name": "Loving-your-work",
+          "position": 7,
+          "title": "Career Coaching, Advice, Changes, Career Path, Work Life ...",
+          "link": "https://www.loving-your-work.com/",
+          "known": false
+        },
+        {
+          "name": "Eduhk",
+          "position": 8,
+          "title": "Career Advising - The Education University of Hong ...",
+          "link": "https://www.eduhk.hk/sao/en/info/career/career_advising",
+          "known": false
+        },
+        {
+          "name": "Eahongkong",
+          "position": 9,
+          "title": "1-1 Career Advice | EAHK - Effective Altruism Hong Kong",
+          "link": "https://www.eahongkong.org/career",
+          "known": false
+        }
+      ],
+      "comparisonSites": [
+        {
+          "name": "Hays",
+          "position": 1,
+          "title": "Career Advice - Hays Hong Kong",
+          "link": "https://www.hays.com.hk/career-advice",
+          "known": true
+        },
+        {
+          "name": "Michael Page",
+          "position": 4,
+          "title": "Career Advice",
+          "link": "https://www.michaelpage.com.hk/advice/career-advice",
+          "known": true
+        }
+      ]
+    },
+    {
+      "query": "nursing jobs in langkawi",
+      "country": "my",
+      "searchUrl": "https://www.google.com/search?q=nursing+jobs+in+langkawi&oq=nursing+jobs+in+langkawi&hl=en&gl=my&sourceid=chrome&ie=UTF-8",
+      "sites": [
+        {
+          "name": "Jora",
+          "position": 1,
+          "title": "Jobs in Langkawi - July 2026 - Jora",
+          "link": "https://my.jora.com/jobs-in-Langkawi",
+          "known": true
+        },
+        {
+          "name": "Facebook",
+          "position": 2,
+          "title": "We are hiring 👨🏻‍⚕️👩🏻‍⚕️Medical Officer 👩🏻‍🏫🧑🏻‍ ...",
+          "link": "https://www.facebook.com/kedahmedical/posts/-we-are-hiring%EF%B8%8F%EF%B8%8Fmedical-officer-state-registered-nurse-srn-call-us-at-04-7744807/2115657141926657/",
+          "known": false
+        },
+        {
+          "name": "JobStreet",
+          "position": 3,
+          "title": "Clinic Nurse Jobs in Langkawi Kedah - June 2026 - Jobstreet",
+          "link": "https://my.jobstreet.com/clinic-nurse-jobs/in-Langkawi-Kedah",
+          "known": true
+        },
+        {
+          "name": "Indeed",
+          "position": 4,
+          "title": "25+ Langkawi Jobs, Employment in Kedah 29 July 2026",
+          "link": "https://malaysia.indeed.com/q-langkawi-l-kedah-jobs.html",
+          "known": true
+        },
+        {
+          "name": "Careers",
+          "position": 5,
+          "title": "Langkawi job openings at Four Seasons Hotels Limited",
+          "link": "https://careers.fourseasons.com/us/en/search-results?keywords=Langkawi",
+          "known": false
+        },
+        {
+          "name": "LinkedIn",
+          "position": 6,
+          "title": "56 Jobs in Langkawi",
+          "link": "https://www.linkedin.com/jobs/jobs-in-langkawi",
+          "known": true
+        },
+        {
+          "name": "MY",
+          "position": 7,
+          "title": "Urgent! Hospital jobs in Langkawi - 10 current vacancies",
+          "link": "https://my.jobsora.com/jobs-hospital-langkawi",
+          "known": false
+        },
+        {
+          "name": "Nursing-jobs",
+          "position": 8,
+          "title": "Nursing Jobs@Sunway",
+          "link": "https://nursing-jobs.sunway.com.my/",
+          "known": false
+        },
+        {
+          "name": "Maukerja",
+          "position": 9,
+          "title": "45 Langkawi Jobs - July 2026 - Urgent Hiring",
+          "link": "https://www.maukerja.my/en/jobsearch/jobs-in-langkawi",
+          "known": false
+        }
+      ],
+      "comparisonSites": [
+        {
+          "name": "Jora",
+          "position": 1,
+          "title": "Jobs in Langkawi - July 2026 - Jora",
+          "link": "https://my.jora.com/jobs-in-Langkawi",
+          "known": true
+        },
+        {
+          "name": "JobStreet",
+          "position": 3,
+          "title": "Clinic Nurse Jobs in Langkawi Kedah - June 2026 - Jobstreet",
+          "link": "https://my.jobstreet.com/clinic-nurse-jobs/in-Langkawi-Kedah",
+          "known": true
+        }
+      ]
+    },
+    {
+      "query": "commonwealth bank employee reviews",
+      "country": "au",
+      "searchUrl": "https://www.google.com/search?q=commonwealth+bank+employee+reviews&oq=commonwealth+bank+employee+reviews&hl=en&gl=au&sourceid=chrome&ie=UTF-8",
+      "sites": [
+        {
+          "name": "Seek",
+          "position": 1,
+          "title": "Reviews CommBank employee ratings and reviews",
+          "link": "https://au.seek.com/companies/commbank-432306/reviews",
+          "known": true
+        },
+        {
+          "name": "Glassdoor",
+          "position": 2,
+          "title": "Commonwealth Bank of Australia Reviews",
+          "link": "https://www.glassdoor.com.au/Reviews/Commonwealth-Bank-of-Australia-Reviews-E7922.htm",
+          "known": false
+        },
+        {
+          "name": "Reddit",
+          "position": 3,
+          "title": "Is CBA good for work/life balance but bad for everything ...",
+          "link": "https://www.reddit.com/r/auscorp/comments/1artsgn/is_cba_good_for_worklife_balance_but_bad_for/",
+          "known": false
+        },
+        {
+          "name": "Indeed",
+          "position": 4,
+          "title": "Commonwealth Bank of Australia Employee Reviews",
+          "link": "https://au.indeed.com/cmp/Commonwealth-Bank-of-Australia-9607b3c5/reviews",
+          "known": true
+        },
+        {
+          "name": "Ambitionbox",
+          "position": 5,
+          "title": "Commonwealth Bank of Australia, India Reviews",
+          "link": "https://www.ambitionbox.com/reviews/commonwealth-bank-of-australia-india-reviews",
+          "known": false
+        },
+        {
+          "name": "Commbank",
+          "position": 6,
+          "title": "Life at CommBank",
+          "link": "https://www.commbank.com.au/about-us/careers/our-stories.html",
+          "known": false
+        },
+        {
+          "name": "AU",
+          "position": 8,
+          "title": "Commonwealth Bank Reviews | Read Customer Service ...",
+          "link": "https://au.trustpilot.com/review/commbank.com.au",
+          "known": false
+        }
+      ],
+      "comparisonSites": [
+        {
+          "name": "Seek",
+          "position": 1,
+          "title": "Reviews CommBank employee ratings and reviews",
+          "link": "https://au.seek.com/companies/commbank-432306/reviews",
+          "known": true
+        },
+        {
+          "name": "Indeed",
+          "position": 4,
+          "title": "Commonwealth Bank of Australia Employee Reviews",
+          "link": "https://au.indeed.com/cmp/Commonwealth-Bank-of-Australia-9607b3c5/reviews",
+          "known": true
+        }
+      ]
+    },
+    {
+      "query": "remote jobs in asia",
+      "country": "sg",
+      "searchUrl": "https://www.google.com/search?q=remote+jobs+in+asia&oq=remote+jobs+in+asia&hl=en&gl=sg&sourceid=chrome&ie=UTF-8",
+      "sites": [
+        {
+          "name": "Remote Jobs in Asia",
+          "position": 1,
+          "title": "Remote Jobs In Asia",
+          "link": "https://remotejobsinasia.com/",
+          "known": false
+        },
+        {
+          "name": "Remote Jobs Asia",
+          "position": 2,
+          "title": "Remote Jobs Asia: Recruitment Agency in Singapore for ...",
+          "link": "https://www.remotejobsasia.com/",
+          "known": false
+        },
+        {
+          "name": "LinkedIn",
+          "position": 3,
+          "title": "1000+ Global Remote jobs in Singapore",
+          "link": "https://sg.linkedin.com/jobs/global-remote-jobs",
+          "known": true
+        },
+        {
+          "name": "Workingnomads",
+          "position": 4,
+          "title": "Remote Jobs APAC",
+          "link": "https://www.workingnomads.com/remote-apac-jobs",
+          "known": false
+        },
+        {
+          "name": "Jobgether",
+          "position": 5,
+          "title": "Remote Jobs in Asia - Work From Home",
+          "link": "https://jobgether.com/remote-jobs/asia",
+          "known": false
+        },
+        {
+          "name": "JobStreet",
+          "position": 6,
+          "title": "Remote Jobs in Singapore (with Salaries) - Jul 2026 | Jobstreet",
+          "link": "https://sg.jobstreet.com/remote-jobs",
+          "known": true
+        },
+        {
+          "name": "Remotive",
+          "position": 7,
+          "title": "Remote Jobs from Asia",
+          "link": "https://remotive.com/remote-asia-jobs",
+          "known": false
+        },
+        {
+          "name": "Remoterocketship",
+          "position": 8,
+          "title": "Remote Jobs in Asia – Apply Now",
+          "link": "https://www.remoterocketship.com/country/asia/",
+          "known": false
+        },
+        {
+          "name": "Indeed",
+          "position": 10,
+          "title": "Remote Jobs Asia jobs in Remote",
+          "link": "https://sg.indeed.com/q-remote-jobs-asia-l-remote-jobs.html",
+          "known": true
+        }
+      ],
+      "comparisonSites": [
+        {
+          "name": "LinkedIn",
+          "position": 3,
+          "title": "1000+ Global Remote jobs in Singapore",
+          "link": "https://sg.linkedin.com/jobs/global-remote-jobs",
+          "known": true
+        },
+        {
+          "name": "JobStreet",
+          "position": 6,
+          "title": "Remote Jobs in Singapore (with Salaries) - Jul 2026 | Jobstreet",
+          "link": "https://sg.jobstreet.com/remote-jobs",
+          "known": true
+        }
+      ]
+    },
+    {
+      "query": "resignation letter",
+      "country": "au",
+      "searchUrl": "https://www.google.com/search?q=resignation+letter&oq=resignation+letter&hl=en&gl=au&sourceid=chrome&ie=UTF-8",
+      "sites": [
+        {
+          "name": "Fair Work Ombudsman",
+          "position": 1,
+          "title": "Letter of resignation template",
+          "link": "https://www.fairwork.gov.au/tools-and-resources/templates/letter-of-resignation",
+          "known": false
+        },
+        {
+          "name": "Hays",
+          "position": 2,
+          "title": "How to write a resignation letter",
+          "link": "https://www.hays.com.au/career-advice/career-development/how-to-write-a-resignation-letter",
+          "known": true
+        },
+        {
+          "name": "ACAS",
+          "position": 3,
+          "title": "Resignation notice letter template",
+          "link": "https://www.acas.org.uk/resignation-letter-template",
+          "known": false
+        },
+        {
+          "name": "Ualberta",
+          "position": 4,
+          "title": "Sample Resignation Letters",
+          "link": "https://www.ualberta.ca/en/career-centre/media-library/documents/resources/sample-resignation-letter.pdf",
+          "known": false
+        },
+        {
+          "name": "Reddit",
+          "position": 5,
+          "title": "Letter of resignation : r/AskAnAustralian",
+          "link": "https://www.reddit.com/r/AskAnAustralian/comments/1cqokp0/letter_of_resignation/",
+          "known": false
+        },
+        {
+          "name": "Sixdegreesexecutive",
+          "position": 6,
+          "title": "Resignation Letter template",
+          "link": "https://www.sixdegreesexecutive.com.au/your-career/resources/resignation-letter-template",
+          "known": false
+        },
+        {
+          "name": "Canva",
+          "position": 7,
+          "title": "Free to edit and print resignation letter templates",
+          "link": "https://www.canva.com/letters/templates/resignation/",
+          "known": false
+        },
+        {
+          "name": "Youth Central",
+          "position": 8,
+          "title": "Sample Resignation Letter - Notice Period Known",
+          "link": "https://www.youthcentral.vic.gov.au/sites/default/files/documents/2023-09/ResignationLetter_NoticeKnown.pdf",
+          "known": false
+        }
+      ],
+      "comparisonSites": [
+        {
+          "name": "Fair Work Ombudsman",
+          "position": 1,
+          "title": "Letter of resignation template",
+          "link": "https://www.fairwork.gov.au/tools-and-resources/templates/letter-of-resignation",
+          "known": false
+        },
+        {
+          "name": "Hays",
+          "position": 2,
+          "title": "How to write a resignation letter",
+          "link": "https://www.hays.com.au/career-advice/career-development/how-to-write-a-resignation-letter",
+          "known": true
+        }
+      ]
+    },
+    {
+      "query": "how much does a fifo worker make",
+      "country": "au",
+      "searchUrl": "https://www.google.com/search?q=how+much+does+a+fifo+worker+make&oq=how+much+does+a+fifo+worker+make&hl=en&gl=au&sourceid=chrome&ie=UTF-8",
+      "sites": [
+        {
+          "name": "Reddit",
+          "position": 1,
+          "title": "Is FIFO pay truly great? : r/AskAnAustralian",
+          "link": "https://www.reddit.com/r/AskAnAustralian/comments/1pk9z27/is_fifo_pay_truly_great/",
+          "known": false
+        },
+        {
+          "name": "Seek",
+          "position": 2,
+          "title": "Fifo No Experience Jobs (with Salaries)",
+          "link": "https://au.seek.com/fifo-no-experience-jobs",
+          "known": true
+        },
+        {
+          "name": "Civilsafety",
+          "position": 3,
+          "title": "FIFO Unpacked: Your Ultimate FAQ Guide to FIFO Work",
+          "link": "https://civilsafety.edu.au/blog/fifo-unpacked-your-ultimate-faq-guide-to-fifo-work?srsltid=AfmBOor5PLDguDnBl3Y0dumX8vRCvNkGdcBJLy0_MQ82j0kDn-ZDn2U9",
+          "known": false
+        },
+        {
+          "name": "Globe24-7",
+          "position": 4,
+          "title": "What is the average salary for a FIFO engineer in Australia?",
+          "link": "https://globe24-7.com/news-insights/what-is-the-average-salary-for-a-fifo-engineer-in-australia/",
+          "known": false
+        },
+        {
+          "name": "Indeed",
+          "position": 5,
+          "title": "200 Fifo Pay Rates Jobs and Work",
+          "link": "https://au.indeed.com/q-fifo-pay-rates-jobs.html",
+          "known": true
+        },
+        {
+          "name": "Facebook",
+          "position": 6,
+          "title": "How much I made in my first year in FIFO mining Australia ...",
+          "link": "https://www.facebook.com/61574442399475/videos/how-much-i-made-in-my-first-year-in-fifo-mining-australia-%EF%B8%8F-how-to-get-on-board-/1362227468611516/",
+          "known": false
+        },
+        {
+          "name": "Resourceau",
+          "position": 7,
+          "title": "FIFO Salary Calculator - RPA",
+          "link": "https://www.resourceau.com.au/fifo-salary-calculator/",
+          "known": false
+        },
+        {
+          "name": "AU",
+          "position": 8,
+          "title": "FIFO worker earning $250000 reveals how Aussies can get ...",
+          "link": "https://au.finance.yahoo.com/news/fifo-worker-earning-250000-reveals-how-aussies-with-no-experience-can-get-into-mining-industry-021715381.html",
+          "known": false
+        }
+      ],
+      "comparisonSites": [
+        {
+          "name": "Seek",
+          "position": 2,
+          "title": "Fifo No Experience Jobs (with Salaries)",
+          "link": "https://au.seek.com/fifo-no-experience-jobs",
+          "known": true
+        },
+        {
+          "name": "Indeed",
+          "position": 5,
+          "title": "200 Fifo Pay Rates Jobs and Work",
+          "link": "https://au.indeed.com/q-fifo-pay-rates-jobs.html",
+          "known": true
+        }
+      ]
+    },
+    {
+      "query": "which city in australia has the most job growth",
+      "country": "au",
+      "searchUrl": "https://www.google.com/search?q=which+city+in+australia+has+the+most+job+growth&oq=which+city+in+australia+has+the+most+job+growth&hl=en&gl=au&sourceid=chrome&ie=UTF-8",
+      "sites": [
+        {
+          "name": "Nationwide Visas",
+          "position": 1,
+          "title": "Top 10 Australian Cities with the Best Job Prospects",
+          "link": "https://www.nationwidevisas.com/blog/top-10-australian-cities-with-the-best-job-prospects/",
+          "known": false
+        },
+        {
+          "name": "Facebook",
+          "position": 2,
+          "title": "Darwin has quietly overtaken Australia's major cities as ...",
+          "link": "https://www.facebook.com/TheNTNews/posts/darwin-has-quietly-overtaken-australias-major-cities-as-one-of-the-nations-faste/1590687892406843/",
+          "known": false
+        },
+        {
+          "name": "Reddit",
+          "position": 3,
+          "title": "What are the cities in Australia that are known to have a ...",
+          "link": "https://www.reddit.com/r/AskAnAustralian/comments/pc6g0v/what_are_the_cities_in_australia_that_are_known/",
+          "known": false
+        },
+        {
+          "name": "Geelongcity",
+          "position": 4,
+          "title": "Geelong retains top spot as Australia's fastest growing job ...",
+          "link": "https://www.geelongcity.vic.gov.au/whats-happening/news-and-updates/geelong-retains-top-spot-australias-fastest-growing-job-market",
+          "known": false
+        },
+        {
+          "name": "Sgsep",
+          "position": 5,
+          "title": "Effective Job Density: comparing our regions and cities",
+          "link": "https://sgsep.com.au/maps/thirdspace/australia-effective-job-density/",
+          "known": false
+        },
+        {
+          "name": "Ielts",
+          "position": 6,
+          "title": "Top Australian cities for study and work",
+          "link": "https://ielts.com.au/australia/prepare/article-top-australian-cities-for-study-and-work",
+          "known": false
+        },
+        {
+          "name": "Reckon",
+          "position": 7,
+          "title": "Australia's Hardest Working Cities",
+          "link": "https://www.reckon.com/au/small-business-resources/hardest-working-cities/?srsltid=AfmBOop6k_GVSjhD9j1sx7b0M2Ox24fo8jmFulsl_0EK0BK8kS7ThYBa",
+          "known": false
+        },
+        {
+          "name": "Connectingrecruiters",
+          "position": 8,
+          "title": "Sydney, Melbourne, or Brisbane? Which Australian City is ...",
+          "link": "https://connectingrecruiters.com.au/recruiters-relocating-to-australia-sydney-melbourne-brisbane/",
+          "known": false
+        }
+      ],
+      "comparisonSites": [
+        {
+          "name": "Nationwide Visas",
+          "position": 1,
+          "title": "Top 10 Australian Cities with the Best Job Prospects",
+          "link": "https://www.nationwidevisas.com/blog/top-10-australian-cities-with-the-best-job-prospects/",
+          "known": false
+        },
+        {
+          "name": "Facebook",
+          "position": 2,
+          "title": "Darwin has quietly overtaken Australia's major cities as ...",
+          "link": "https://www.facebook.com/TheNTNews/posts/darwin-has-quietly-overtaken-australias-major-cities-as-one-of-the-nations-faste/1590687892406843/",
+          "known": false
+        }
+      ]
+    },
+    {
+      "query": "how to write a cover letter",
+      "country": "au",
+      "searchUrl": "https://www.google.com/search?q=how+to+write+a+cover+letter&oq=how+to+write+a+cover+letter&hl=en&gl=au&sourceid=chrome&ie=UTF-8",
+      "sites": [
+        {
+          "name": "Youth Central",
+          "position": 1,
+          "title": "How to write a cover letter",
+          "link": "https://www.youthcentral.vic.gov.au/jobs/resumes-and-cover-letters/how-write-cover-letter",
+          "known": false
+        },
+        {
+          "name": "Seek",
+          "position": 2,
+          "title": "Free cover letter template",
+          "link": "https://au.seek.com/career-advice/article/free-cover-letter-template",
+          "known": true
+        },
+        {
+          "name": "ENG",
+          "position": 3,
+          "title": "Creating your cover letter",
+          "link": "https://eng.unimelb.edu.au/__data/assets/pdf_file/0004/3204679/cover-letter.pdf",
+          "known": false
+        },
+        {
+          "name": "Jobaccess",
+          "position": 4,
+          "title": "Writing a job application and cover letter",
+          "link": "https://www.jobaccess.gov.au/i-am-a-person-with-disability/looking-applying-job/writing-cover-letter",
+          "known": false
+        },
+        {
+          "name": "Sydney",
+          "position": 5,
+          "title": "How to write a cover letter",
+          "link": "https://www.sydney.edu.au/careers/students/applying-for-jobs/how-to-write-a-cover-letter.html",
+          "known": false
+        },
+        {
+          "name": "Myfuture",
+          "position": 6,
+          "title": "A good cover letter is more important than you think",
+          "link": "https://myfuture.edu.au/career-articles/details/a-good-cover-letter-is-more-important-than-you-think",
+          "known": false
+        },
+        {
+          "name": "Jobsandskills",
+          "position": 7,
+          "title": "How to write a winning cover letter",
+          "link": "https://www.jobsandskills.wa.gov.au/sites/default/files/uploads/Jobs%26Careers/jswa-cover-letters.pdf",
+          "known": false
+        },
+        {
+          "name": "Jobjumpstart",
+          "position": 8,
+          "title": "4 steps to writing a killer cover letter",
+          "link": "https://www.jobjumpstart.gov.au/video/4-steps-writing-killer-cover-letter",
+          "known": false
+        }
+      ],
+      "comparisonSites": [
+        {
+          "name": "Youth Central",
+          "position": 1,
+          "title": "How to write a cover letter",
+          "link": "https://www.youthcentral.vic.gov.au/jobs/resumes-and-cover-letters/how-write-cover-letter",
+          "known": false
+        },
+        {
+          "name": "Seek",
+          "position": 2,
+          "title": "Free cover letter template",
+          "link": "https://au.seek.com/career-advice/article/free-cover-letter-template",
+          "known": true
+        }
+      ]
+    },
+    {
+      "query": "top earning jobs in malaysia",
+      "country": "my",
+      "searchUrl": "https://www.google.com/search?q=top+earning+jobs+in+malaysia&oq=top+earning+jobs+in+malaysia&hl=en&gl=my&sourceid=chrome&ie=UTF-8",
+      "sites": [
+        {
+          "name": "UOW",
+          "position": 1,
+          "title": "Top 10 Highest Paying Jobs in Malaysia",
+          "link": "https://www.uow.edu.my/blog/highest-paying-jobs-in-malaysia/",
+          "known": false
+        },
+        {
+          "name": "Studyonline",
+          "position": 2,
+          "title": "Highest-Paying Jobs in Malaysia in 2026: Salary Guide",
+          "link": "https://studyonline.sunwayuniversity.edu.my/blog/highest-paying-jobs-malaysia",
+          "known": false
+        },
+        {
+          "name": "JobStreet",
+          "position": 3,
+          "title": "High Salary Jobs (with Salaries) - Jul 2026 | Jobstreet",
+          "link": "https://my.jobstreet.com/high-salary-jobs",
+          "known": true
+        },
+        {
+          "name": "Michael Page",
+          "position": 4,
+          "title": "Highest-paying jobs in Malaysia: Top 10 in 2026",
+          "link": "https://www.michaelpage.com.my/advice/career-advice/salary-and-negotiation/highest-paying-jobs-malaysia",
+          "known": true
+        },
+        {
+          "name": "Reddit",
+          "position": 5,
+          "title": "Any jobs gives your RM30k : r/malaysia",
+          "link": "https://www.reddit.com/r/malaysia/comments/18xh0ic/any_jobs_gives_your_rm30k/",
+          "known": false
+        },
+        {
+          "name": "Schooladvisor",
+          "position": 6,
+          "title": "Top 10 Highest Paying Jobs in Malaysia from Salary Explorer",
+          "link": "https://schooladvisor.my/features/top-10-highest-paying-jobs-malaysia",
+          "known": false
+        },
+        {
+          "name": "Reeracoen",
+          "position": 8,
+          "title": "Top 10 High‑Paying Jobs in Malaysia 2026",
+          "link": "https://www.reeracoen.com.my/en/articles/top-10-highpaying-jobs-in-malaysia-2026",
+          "known": false
+        },
+        {
+          "name": "Instagram",
+          "position": 9,
+          "title": "Top 5 Highest Demand Jobs In Malaysia 2026! #students ...",
+          "link": "https://www.instagram.com/reel/DWJXCCdkz7_/",
+          "known": false
+        }
+      ],
+      "comparisonSites": [
+        {
+          "name": "JobStreet",
+          "position": 3,
+          "title": "High Salary Jobs (with Salaries) - Jul 2026 | Jobstreet",
+          "link": "https://my.jobstreet.com/high-salary-jobs",
+          "known": true
+        },
+        {
+          "name": "Michael Page",
+          "position": 4,
+          "title": "Highest-paying jobs in Malaysia: Top 10 in 2026",
+          "link": "https://www.michaelpage.com.my/advice/career-advice/salary-and-negotiation/highest-paying-jobs-malaysia",
+          "known": true
+        }
+      ]
+    }
+  ]
+}
