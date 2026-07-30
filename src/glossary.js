@@ -80,6 +80,26 @@ export function appendGlossaryText(element, text) {
   element.append(document.createTextNode(value.slice(cursor)));
 }
 
+export function enableGlossaryInteractions(root = document) {
+  if (root.dataset.glossaryBound === "true") return;
+  root.dataset.glossaryBound = "true";
+
+  root.addEventListener("click", (event) => {
+    const term = event.target.closest(".glossary-term");
+    const openTerms = root.querySelectorAll(".glossary-term.is-open");
+
+    if (!term) {
+      openTerms.forEach((item) => item.classList.remove("is-open"));
+      return;
+    }
+
+    event.preventDefault();
+    const shouldOpen = !term.classList.contains("is-open");
+    openTerms.forEach((item) => item.classList.remove("is-open"));
+    if (shouldOpen) term.classList.add("is-open");
+  });
+}
+
 function hasTermBoundaries(value, start, end) {
   return !isLetterOrNumber(value[start - 1]) && !isLetterOrNumber(value[end]);
 }
