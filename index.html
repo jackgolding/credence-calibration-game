@@ -65,7 +65,6 @@
           <div class="progress-panel">
             <div class="progress-copy">
               <span id="progress-label">Question 1 of 10</span>
-              <span id="running-score">No score yet</span>
             </div>
             <div
               class="progress-track"
@@ -81,6 +80,9 @@
           <article class="card question-card">
             <p class="kicker">True or false?</p>
             <h2 id="question-prompt"></h2>
+            <p class="glossary-hint">
+              Hover or focus underlined terms for a quick definition.
+            </p>
 
             <form id="answer-form">
               <fieldset id="answer-fieldset">
@@ -122,24 +124,6 @@
                 Lock in answer
               </button>
             </form>
-
-            <div id="feedback" class="feedback" tabindex="-1" hidden>
-              <p id="feedback-verdict" class="feedback-verdict"></p>
-              <h3 id="feedback-title"></h3>
-              <p id="feedback-explanation"></p>
-              <div class="feedback-score">
-                <span>Brier score</span>
-                <strong id="feedback-brier"></strong>
-                <small>Lower is better</small>
-              </div>
-              <button
-                id="next-button"
-                class="button button-primary button-full"
-                type="button"
-              >
-                Next question
-              </button>
-            </div>
           </article>
         </section>
 
@@ -174,6 +158,17 @@
               <h2>Were you right as often as you expected?</h2>
             </div>
             <div id="calibration-chart" class="calibration-chart"></div>
+          </article>
+
+          <article class="card answer-review-card">
+            <div>
+              <p class="kicker">Answer review</p>
+              <h2>Questions, answers and rankings</h2>
+              <p class="glossary-hint">
+                Hover or focus underlined terms for a quick definition.
+              </p>
+            </div>
+            <div id="answer-review" class="answer-review"></div>
           </article>
 
           <button id="restart-button" class="button button-secondary" type="button">
