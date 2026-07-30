@@ -1,4 +1,5 @@
 import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js";
+import { appendGlossaryText } from "./glossary.js";
 import {
   calibrationBuckets,
   scoreAnswer,
@@ -17,25 +18,19 @@ const elements = {
   progressLabel: document.querySelector("#progress-label"),
   progressBar: document.querySelector("#progress-bar"),
   progressTrack: document.querySelector(".progress-track"),
-  runningScore: document.querySelector("#running-score"),
   questionPrompt: document.querySelector("#question-prompt"),
   answerForm: document.querySelector("#answer-form"),
   answerFieldset: document.querySelector("#answer-fieldset"),
   confidence: document.querySelector("#confidence"),
   confidenceOutput: document.querySelector("#confidence-output"),
   answerError: document.querySelector("#answer-error"),
-  feedback: document.querySelector("#feedback"),
-  feedbackVerdict: document.querySelector("#feedback-verdict"),
-  feedbackTitle: document.querySelector("#feedback-title"),
-  feedbackExplanation: document.querySelector("#feedback-explanation"),
-  feedbackBrier: document.querySelector("#feedback-brier"),
-  nextButton: document.querySelector("#next-button"),
   resultsSummary: document.querySelector("#results-summary"),
   accuracyMetric: document.querySelector("#accuracy-metric"),
   accuracyDetail: document.querySelector("#accuracy-detail"),
   brierMetric: document.querySelector("#brier-metric"),
   gapMetric: document.querySelector("#gap-metric"),
   calibrationChart: document.querySelector("#calibration-chart"),
+  answerReview: document.querySelector("#answer-review"),
   restartButton: document.querySelector("#restart-button"),
   loadError: document.querySelector("#load-error"),
   retryButton: document.querySelector("#retry-button"),
@@ -191,7 +186,7 @@ function restoreState() {
       sessionId: String(saved.sessionId),
       nickname: String(saved.nickname || "").slice(0, 40),
       currentIndex: Math.min(
-        Math.max(Number(saved.currentIndex) || 0, 0),
+        Math.max(Number(saved.currentIndex) || 0, saved.attempts.length, 0),
         questions.length,
       ),
       attempts: saved.attempts,
@@ -234,9 +229,6 @@ function updateConfidence() {
 
 function renderQuestion() {
   const question = questions[state.currentIndex];
-  const previousAttempt = state.attempts.find(
-    (attempt) => attempt.questionId === question.id,
-  );
   const completed = state.attempts.length;
   const total = questions.length;
   const progress = (completed / total) * 100;
@@ -244,24 +236,13 @@ function renderQuestion() {
   elements.progressLabel.textContent = `Question ${state.currentIndex + 1} of ${total}`;
   elements.progressBar.style.width = `${progress}%`;
   elements.progressTrack.setAttribute("aria-valuenow", String(Math.round(progress)));
-  elements.questionPrompt.textContent = question.prompt;
+  elements.questionPrompt.replaceChildren();
+  appendGlossaryText(elements.questionPrompt, question.prompt);
   elements.answerError.textContent = "";
-
-  const summary = summarizeAttempts(state.attempts);
-  elements.runningScore.textContent = summary.total
-    ? `${Math.round(summary.accuracy * 100)}% correct · ${summary.meanBrier.toFixed(3)} Brier`
-    : "No score yet";
-
-  if (previousAttempt) {
-    showFeedback(question, previousAttempt, false);
-  } else {
-    elements.answerForm.hidden = false;
-    elements.feedback.hidden = true;
-    elements.answerFieldset.disabled = false;
-    elements.answerForm.reset();
-    elements.confidence.value = "70";
-    updateConfidence();
-  }
+  elements.answerFieldset.disabled = false;
+  elements.answerForm.reset();
+  elements.confidence.value = "70";
+  updateConfidence();
 
   showView(elements.game);
 }
@@ -298,25 +279,11 @@ function handleAnswer(event) {
   };
 
   state.attempts.push(attempt);
+  state.currentIndex += 1;
   saveState();
-  showFeedback(question, attempt, true);
   void sendResponse(attempt);
-}
-
-function showFeedback(question, attempt, shouldFocus) {
-  elements.answerForm.hidden = true;
-  elements.feedback.hidden = false;
-  elements.feedback.className = `feedback ${attempt.correct ? "correct" : "incorrect"}`;
-  elements.feedbackVerdict.textContent = attempt.correct ? "Correct" : "Not quite";
-  elements.feedbackTitle.textContent = `The answer is ${question.answer ? "true" : "false"}.`;
-  elements.feedbackExplanation.textContent = question.explanation;
-  elements.feedbackBrier.textContent = Number(attempt.brier).toFixed(3);
-  elements.nextButton.textContent =
-    state.currentIndex === questions.length - 1
-      ? "See calibration report"
-      : "Next question";
-
-  if (shouldFocus) elements.feedback.focus();
+  routeFromState();
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 async function sendResponse(attempt) {
@@ -341,13 +308,6 @@ async function sendResponse(attempt) {
   } catch (error) {
     console.warn("The response could not be saved to Google Sheets.", error);
   }
-}
-
-function handleNext() {
-  state.currentIndex += 1;
-  saveState();
-  routeFromState();
-  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function renderResults() {
@@ -384,7 +344,73 @@ function renderResults() {
     elements.calibrationChart.append(row);
   }
 
+  renderAnswerReview();
   showView(elements.results);
+}
+
+function renderAnswerReview() {
+  const attemptsByQuestion = new Map(
+    state.attempts.map((attempt) => [attempt.questionId, attempt]),
+  );
+  elements.answerReview.replaceChildren();
+
+  questions.forEach((question, index) => {
+    const attempt = attemptsByQuestion.get(question.id);
+    if (!attempt) return;
+
+    const item = document.createElement("section");
+    item.className = `answer-review-item ${attempt.correct ? "correct" : "incorrect"}`;
+
+    const heading = document.createElement("div");
+    heading.className = "answer-review-heading";
+
+    const number = document.createElement("span");
+    number.className = "answer-review-number";
+    number.textContent = `Question ${index + 1}`;
+
+    const verdict = document.createElement("span");
+    verdict.className = "answer-review-verdict";
+    verdict.textContent = attempt.correct ? "Correct" : "Incorrect";
+
+    const prompt = document.createElement("h3");
+    appendGlossaryText(prompt, question.prompt);
+
+    const answers = document.createElement("dl");
+    answers.className = "answer-review-answers";
+    appendReviewDetail(
+      answers,
+      "Your answer",
+      `${attempt.selectedAnswer ? "True" : "False"} · ${attempt.confidence}% confidence`,
+    );
+    appendReviewDetail(
+      answers,
+      "Correct answer",
+      question.answer ? "True" : "False",
+    );
+    appendReviewDetail(
+      answers,
+      "Brier score",
+      Number(attempt.brier).toFixed(3),
+    );
+
+    const explanation = document.createElement("p");
+    explanation.className = "answer-review-explanation";
+    appendGlossaryText(explanation, question.explanation);
+
+    heading.append(number, verdict);
+    item.append(heading, prompt, answers, explanation);
+    elements.answerReview.append(item);
+  });
+}
+
+function appendReviewDetail(list, label, value) {
+  const group = document.createElement("div");
+  const term = document.createElement("dt");
+  term.textContent = label;
+  const detail = document.createElement("dd");
+  detail.textContent = value;
+  group.append(term, detail);
+  list.append(group);
 }
 
 function calibrationMessage(summary) {
@@ -408,7 +434,6 @@ function restartGame() {
 elements.startForm.addEventListener("submit", handleStart);
 elements.answerForm.addEventListener("submit", handleAnswer);
 elements.confidence.addEventListener("input", updateConfidence);
-elements.nextButton.addEventListener("click", handleNext);
 elements.restartButton.addEventListener("click", restartGame);
 elements.retryButton.addEventListener("click", loadQuestions);
 
