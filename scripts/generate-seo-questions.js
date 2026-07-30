@@ -177,7 +177,9 @@ function makeQuestion(result, index, capturedAt) {
 
   return {
     id: `seo-${String(index + 1).padStart(2, "0")}`,
-    prompt: `Build the top 3 Google results for “${result.query}”`,
+    prompt:
+      `Build the top 3 Google results for “${result.query}” ` +
+      `in ${countryName(result.country)}`,
     answer: true,
     results: topResults.map((site, resultIndex) => ({
       id: `seo-${String(index + 1).padStart(2, "0")}-result-${resultIndex + 1}`,

@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "seo-01",
-      "prompt": "Build the top 3 Google results for “poea jobs”",
+      "prompt": "Build the top 3 Google results for “poea jobs” in the Philippines",
       "answer": true,
       "results": [
         {
@@ -37,7 +37,7 @@
     },
     {
       "id": "seo-02",
-      "prompt": "Build the top 3 Google results for “hong kong career advice”",
+      "prompt": "Build the top 3 Google results for “hong kong career advice” in Hong Kong",
       "answer": true,
       "results": [
         {
@@ -72,7 +72,7 @@
     },
     {
       "id": "seo-03",
-      "prompt": "Build the top 3 Google results for “nursing jobs in langkawi”",
+      "prompt": "Build the top 3 Google results for “nursing jobs in langkawi” in Malaysia",
       "answer": true,
       "results": [
         {
@@ -107,7 +107,7 @@
     },
     {
       "id": "seo-04",
-      "prompt": "Build the top 3 Google results for “commonwealth bank employee reviews”",
+      "prompt": "Build the top 3 Google results for “commonwealth bank employee reviews” in Australia",
       "answer": true,
       "results": [
         {
@@ -142,7 +142,7 @@
     },
     {
       "id": "seo-05",
-      "prompt": "Build the top 3 Google results for “remote jobs in asia”",
+      "prompt": "Build the top 3 Google results for “remote jobs in asia” in Singapore",
       "answer": true,
       "results": [
         {
@@ -177,7 +177,7 @@
     },
     {
       "id": "seo-06",
-      "prompt": "Build the top 3 Google results for “resignation letter”",
+      "prompt": "Build the top 3 Google results for “resignation letter” in Australia",
       "answer": true,
       "results": [
         {
@@ -212,7 +212,7 @@
     },
     {
       "id": "seo-07",
-      "prompt": "Build the top 3 Google results for “how much does a fifo worker make”",
+      "prompt": "Build the top 3 Google results for “how much does a fifo worker make” in Australia",
       "answer": true,
       "results": [
         {
@@ -247,7 +247,7 @@
     },
     {
       "id": "seo-08",
-      "prompt": "Build the top 3 Google results for “which city in australia has the most job growth”",
+      "prompt": "Build the top 3 Google results for “which city in australia has the most job growth” in Australia",
       "answer": true,
       "results": [
         {
@@ -282,7 +282,7 @@
     },
     {
       "id": "seo-09",
-      "prompt": "Build the top 3 Google results for “how to write a cover letter”",
+      "prompt": "Build the top 3 Google results for “how to write a cover letter” in Australia",
       "answer": true,
       "results": [
         {
@@ -317,7 +317,7 @@
     },
     {
       "id": "seo-10",
-      "prompt": "Build the top 3 Google results for “top earning jobs in malaysia”",
+      "prompt": "Build the top 3 Google results for “top earning jobs in malaysia” in Malaysia",
       "answer": true,
       "results": [
         {
