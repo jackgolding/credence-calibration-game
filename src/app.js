@@ -1,11 +1,11 @@
-import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=6";
-import { appendGlossaryText } from "./glossary.js?v=6";
+import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=7";
+import { appendGlossaryText, enableGlossaryInteractions } from "./glossary.js?v=7";
 import {
   calibrationBuckets,
   isCorrectOrder,
   scoreAnswer,
   summarizeAttempts,
-} from "./scoring.js?v=6";
+} from "./scoring.js?v=7";
 
 const elements = {
   loading: document.querySelector("#loading-view"),
@@ -717,4 +717,5 @@ elements.resetButton.addEventListener("click", handleResetClick);
 elements.retryButton.addEventListener("click", loadQuestions);
 
 updateConfidence();
+enableGlossaryInteractions();
 void loadQuestions();
