@@ -8,13 +8,25 @@
       content="Practice matching your confidence to what you actually know."
     />
     <title>Credence — A calibration game</title>
+    <link rel="preload" href="data/questions.json" as="fetch" crossorigin />
     <script>
       if (location.protocol === "http:") {
         location.replace("https:" + location.href.slice(location.protocol.length));
       }
+      // Start fetching questions as early as possible, in parallel with CSS/JS.
+      window.__credenceQuestions = fetch("./data/questions.json", {
+        cache: "force-cache",
+      }).then((response) => {
+        if (!response.ok) throw new Error("The demo questions could not be loaded.");
+        return response.json();
+      });
     </script>
     <link rel="stylesheet" href="fonts/fonts.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="modulepreload" href="src/app.js?v=8" />
+    <link rel="modulepreload" href="src/config.js?v=8" />
+    <link rel="modulepreload" href="src/glossary.js?v=8" />
+    <link rel="modulepreload" href="src/scoring.js?v=8" />
   </head>
   <body>
     <div class="page-shell">
@@ -38,7 +50,7 @@
       <main>
         <section id="loading-view" class="card status-card" aria-live="polite">
           <div class="spinner" aria-hidden="true"></div>
-          <p>Loading today’s questions…</p>
+          <p>Loading questions…</p>
         </section>
 
         <section id="start-view" class="hero card" hidden>
@@ -292,7 +304,7 @@
       </footer>
     </div>
 
-    <script type="module" src="src/app.js?v=7"></script>
+    <script type="module" src="src/app.js?v=8"></script>
     <script>
       window.setTimeout(() => {
         const loading = document.getElementById("loading-view");
