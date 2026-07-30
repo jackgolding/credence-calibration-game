@@ -52,7 +52,21 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   border-bottom: 1px solid rgba(101, 113, 107, 0.22);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.header-reset {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 0.82rem;
 }
 
 .brand {
@@ -341,6 +355,18 @@ input:focus-visible {
   color: var(--ink);
   background: transparent;
   border: 1px solid var(--ink);
+}
+
+.button-ghost {
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid rgba(101, 113, 107, 0.35);
+}
+
+.button-ghost:hover {
+  color: var(--ink);
+  background: rgba(255, 253, 248, 0.9);
+  border-color: rgba(101, 113, 107, 0.55);
 }
 
 .button-full {
@@ -951,6 +977,14 @@ footer p {
 
   .site-header {
     height: 76px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .eyebrow {
+    display: none;
   }
 
   main {
