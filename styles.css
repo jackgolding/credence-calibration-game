@@ -166,6 +166,113 @@ h1 {
   line-height: 1.4;
 }
 
+.ctr-panel {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px 36px;
+  padding: 36px 64px;
+  border-bottom: 1px solid var(--line);
+  align-items: end;
+}
+
+.ctr-panel-copy h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.ctr-panel-copy p {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.ctr-panel-copy strong {
+  color: var(--ink);
+}
+
+.ctr-panel-cite {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+
+.ctr-panel-cite a {
+  color: var(--green);
+  text-underline-offset: 3px;
+}
+
+.ctr-chart {
+  margin: 0;
+}
+
+.ctr-chart-bars {
+  display: grid;
+  gap: 7px;
+}
+
+.ctr-bar {
+  display: grid;
+  grid-template-columns: 34px 1fr 48px;
+  gap: 10px;
+  align-items: center;
+}
+
+.ctr-rank {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
+.ctr-bar.top .ctr-rank {
+  color: var(--accent-dark);
+}
+
+.ctr-track {
+  display: block;
+  height: 10px;
+  overflow: hidden;
+  background: #e8e6dc;
+  border-radius: 99px;
+}
+
+.ctr-fill {
+  display: block;
+  width: calc(var(--ctr) / 27.6 * 100%);
+  height: 100%;
+  background: #9bb3a6;
+  border-radius: inherit;
+}
+
+.ctr-bar.top .ctr-fill {
+  background: var(--accent);
+}
+
+.ctr-value {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.ctr-bar.top .ctr-value {
+  color: var(--ink);
+}
+
+.ctr-chart figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.ctr-chart figcaption strong {
+  color: var(--ink);
+}
+
 .start-form {
   padding: 34px 64px 42px;
 }
@@ -851,11 +958,17 @@ footer p {
   }
 
   .hero-copy,
+  .ctr-panel,
   .start-form,
   .question-card,
   .calibration-card,
   .answer-review-card {
     padding: 34px 24px;
+  }
+
+  .ctr-panel {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   h1 {
