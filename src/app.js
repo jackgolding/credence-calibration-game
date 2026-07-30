@@ -1,11 +1,11 @@
-import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=4";
-import { appendGlossaryText } from "./glossary.js?v=4";
+import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=5";
+import { appendGlossaryText } from "./glossary.js?v=5";
 import {
   calibrationBuckets,
   isCorrectOrder,
   scoreAnswer,
   summarizeAttempts,
-} from "./scoring.js?v=4";
+} from "./scoring.js?v=5";
 
 const elements = {
   loading: document.querySelector("#loading-view"),
@@ -35,6 +35,7 @@ const elements = {
   calibrationChart: document.querySelector("#calibration-chart"),
   answerReview: document.querySelector("#answer-review"),
   restartButton: document.querySelector("#restart-button"),
+  resetButton: document.querySelector("#reset-button"),
   loadError: document.querySelector("#load-error"),
   retryButton: document.querySelector("#retry-button"),
 };
@@ -630,11 +631,34 @@ function calibrationMessage(summary) {
   return "You knew more than you gave yourself credit for. Your answers support a little more confidence.";
 }
 
-function restartGame() {
+function hasProgress() {
+  return Boolean(state.started || state.attempts.length || state.nickname);
+}
+
+function resetGame({ confirm = false } = {}) {
+  if (
+    confirm &&
+    hasProgress() &&
+    !window.confirm(
+      "Clear your current game and start over? Submitted answers already sent to Sheets stay saved.",
+    )
+  ) {
+    return;
+  }
+
   state = newState();
+  elements.nickname.value = "";
   localStorage.removeItem(GAME_CONFIG.storageKey);
   routeFromState();
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function restartGame() {
+  resetGame({ confirm: false });
+}
+
+function handleResetClick() {
+  resetGame({ confirm: true });
 }
 
 elements.startForm.addEventListener("submit", handleStart);
@@ -645,6 +669,7 @@ elements.serpBuilder.addEventListener("dragstart", handleResultDragStart);
 elements.serpBuilder.addEventListener("dragover", handleResultDragOver);
 elements.serpBuilder.addEventListener("dragend", handleResultDragEnd);
 elements.restartButton.addEventListener("click", restartGame);
+elements.resetButton.addEventListener("click", handleResetClick);
 elements.retryButton.addEventListener("click", loadQuestions);
 
 updateConfidence();
