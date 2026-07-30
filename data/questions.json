@@ -1,64 +1,64 @@
 {
   "questions": [
     {
-      "id": "demo-01",
-      "prompt": "Venus is the hottest planet in our solar system.",
+      "id": "seo-01",
+      "prompt": "For the Google search “poea jobs”, JobStreet ranks higher than WorkAbroad.ph.",
       "answer": true,
-      "explanation": "Venus is hotter than Mercury because its dense carbon-dioxide atmosphere traps heat through an extreme greenhouse effect."
+      "explanation": "JobStreet ranked #3, ahead of WorkAbroad.ph at #5, in PH organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
-      "id": "demo-02",
-      "prompt": "The Great Wall of China is visible from the Moon with the naked eye.",
+      "id": "seo-02",
+      "prompt": "For the Google search “hong kong career advice”, Michael Page ranks higher than Hays.",
       "answer": false,
-      "explanation": "The wall is too narrow to distinguish from the Moon without magnification, despite the persistence of this popular myth."
+      "explanation": "Hays ranked #1, ahead of Michael Page at #4, in HK organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
-      "id": "demo-03",
-      "prompt": "An octopus has three hearts.",
+      "id": "seo-03",
+      "prompt": "For the Google search “nursing jobs in langkawi”, Jora ranks higher than JobStreet.",
       "answer": true,
-      "explanation": "Two hearts pump blood through the gills, while a third circulates it through the rest of the body."
+      "explanation": "Jora ranked #1, ahead of JobStreet at #3, in MY organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
-      "id": "demo-04",
-      "prompt": "Lightning never strikes the same place twice.",
+      "id": "seo-04",
+      "prompt": "For the Google search “commonwealth bank employee reviews”, Indeed ranks higher than Seek.",
       "answer": false,
-      "explanation": "Tall or isolated structures can be struck repeatedly. The Empire State Building is struck many times in a typical year."
+      "explanation": "Seek ranked #1, ahead of Indeed at #4, in AU organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
-      "id": "demo-05",
-      "prompt": "A day on Venus is longer than a year on Venus.",
+      "id": "seo-05",
+      "prompt": "For the Google search “remote jobs in asia”, LinkedIn ranks higher than JobStreet.",
       "answer": true,
-      "explanation": "Venus takes about 243 Earth days to rotate once, but only about 225 Earth days to orbit the Sun."
+      "explanation": "LinkedIn ranked #3, ahead of JobStreet at #6, in SG organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
-      "id": "demo-06",
-      "prompt": "Goldfish have a memory span of only three seconds.",
+      "id": "seo-06",
+      "prompt": "For the Google search “resignation letter”, Hays ranks higher than Fair Work Ombudsman.",
       "answer": false,
-      "explanation": "Experiments show that goldfish can retain learned associations for weeks or months."
+      "explanation": "Fair Work Ombudsman ranked #1, ahead of Hays at #2, in AU organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
-      "id": "demo-07",
-      "prompt": "Sound travels faster through water than through air.",
+      "id": "seo-07",
+      "prompt": "For the Google search “how much does a fifo worker make”, Seek ranks higher than Indeed.",
       "answer": true,
-      "explanation": "Particles are more closely packed in water, allowing vibrations to transfer roughly four times faster than in air."
+      "explanation": "Seek ranked #2, ahead of Indeed at #5, in AU organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
-      "id": "demo-08",
-      "prompt": "Humans use only ten percent of their brains.",
+      "id": "seo-08",
+      "prompt": "For the Google search “which city in australia has the most job growth”, Facebook ranks higher than Nationwide Visas.",
       "answer": false,
-      "explanation": "Brain imaging shows activity across virtually every region, although not all areas are equally active at the same moment."
+      "explanation": "Nationwide Visas ranked #1, ahead of Facebook at #2, in AU organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
-      "id": "demo-09",
-      "prompt": "Bananas are botanically classified as berries.",
+      "id": "seo-09",
+      "prompt": "For the Google search “how to write a cover letter”, Youth Central ranks higher than Seek.",
       "answer": true,
-      "explanation": "A botanical berry develops from one flower with one ovary and has seeds embedded in its flesh; bananas meet that definition."
+      "explanation": "Youth Central ranked #1, ahead of Seek at #2, in AU organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
     },
     {
-      "id": "demo-10",
-      "prompt": "The chemical symbol for potassium is P.",
+      "id": "seo-10",
+      "prompt": "For the Google search “top earning jobs in malaysia”, Michael Page ranks higher than JobStreet.",
       "answer": false,
-      "explanation": "Potassium's symbol is K, derived from the Neo-Latin word kalium. P is the symbol for phosphorus."
+      "explanation": "JobStreet ranked #3, ahead of Michael Page at #4, in MY organic Google results captured via SerpApi on 2026-07-30. Search rankings can change over time."
     }
   ]
 }
