@@ -8,6 +8,12 @@
       content="Practice matching your confidence to what you actually know."
     />
     <title>Credence — A calibration game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -286,6 +292,19 @@
       </footer>
     </div>
 
-    <script type="module" src="src/app.js?v=5"></script>
+    <script type="module" src="src/app.js?v=6"></script>
+    <script>
+      window.setTimeout(() => {
+        const loading = document.getElementById("loading-view");
+        if (!loading || loading.hidden) return;
+        const errorView = document.getElementById("error-view");
+        const loadError = document.getElementById("load-error");
+        if (!errorView || !loadError) return;
+        loading.hidden = true;
+        errorView.hidden = false;
+        loadError.textContent =
+          "The game is taking too long to load. Try Reset game, then refresh.";
+      }, 12000);
+    </script>
   </body>
 </html>
