@@ -1,8 +1,8 @@
 # Credence Calibration Game
 
-A small true-or-false game for practicing probabilistic judgment. Players choose
-an answer, report 50–100% confidence, and receive a Brier score plus a
-confidence-bucket calibration report.
+A small search-ranking game for practicing probabilistic judgment. Players
+rebuild the top three results, report 50–100% confidence, and receive a Brier
+score plus a confidence-bucket calibration report.
 
 The frontend is a dependency-free static site hosted by GitHub Pages. Questions
 and anonymous attempts can be stored in Google Sheets through a Google Apps
@@ -45,10 +45,11 @@ npm run generate:seo
 ```
 
 The generator searches Google in the country relevant to each query and writes
-10 true-or-false ranking comparisons to `data/questions.json`. It also saves the
+10 top-three SERP builder challenges to `data/questions.json`. It also saves the
 source positions and result URLs in `data/serp-snapshot.json`. Rankings are a
-dated snapshot and can change. The `.env` file is ignored by Git and must never
-be exposed in frontend code.
+dated snapshot and can change. Run `npm run generate:seo -- --from-snapshot` to
+regenerate questions without making API requests. The `.env` file is ignored by
+Git and must never be exposed in frontend code.
 
 ## Connect Google Sheets
 

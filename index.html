@@ -31,13 +31,13 @@
             <p class="kicker">Know what you know</p>
             <h1>How sure are you, really?</h1>
             <p class="lede">
-              Answer true-or-false questions, state your confidence, and learn
+              Rebuild Google result pages, state your confidence, and learn
               whether your certainty matches reality.
             </p>
           </div>
 
           <div class="how-it-works" aria-label="How to play">
-            <div><span>01</span><p>Choose true or false</p></div>
+            <div><span>01</span><p>Order the top three results</p></div>
             <div><span>02</span><p>Set confidence from 50–100%</p></div>
             <div><span>03</span><p>Review your calibration</p></div>
           </div>
@@ -78,7 +78,7 @@
           </div>
 
           <article class="card question-card">
-            <p class="kicker">True or false?</p>
+            <p class="kicker">SERP builder</p>
             <h2 id="question-prompt"></h2>
             <p class="glossary-hint">
               Hover or focus underlined terms for a quick definition.
@@ -86,21 +86,23 @@
 
             <form id="answer-form">
               <fieldset id="answer-fieldset">
-                <legend class="sr-only">Choose an answer</legend>
-                <div class="answer-options">
-                  <label class="answer-option">
-                    <input type="radio" name="answer" value="true" />
-                    <span>True</span>
-                  </label>
-                  <label class="answer-option">
-                    <input type="radio" name="answer" value="false" />
-                    <span>False</span>
-                  </label>
-                </div>
+                <legend class="sr-only">Order the three search results</legend>
+                <p class="builder-instruction">
+                  Put the results in order from <strong>#1</strong> to
+                  <strong>#3</strong>. Drag each card or use its arrow buttons.
+                </p>
+                <ol
+                  id="serp-builder"
+                  class="serp-builder"
+                  aria-label="Your search result order"
+                ></ol>
+                <p id="builder-status" class="sr-only" aria-live="polite"></p>
 
                 <div class="confidence-control">
                   <div class="confidence-heading">
-                    <label for="confidence">How confident are you?</label>
+                    <label for="confidence">
+                      How confident are you that this order is right?
+                    </label>
                     <output id="confidence-output" for="confidence">70%</output>
                   </div>
                   <input
@@ -121,7 +123,7 @@
 
               <p id="answer-error" class="error-message" role="alert"></p>
               <button class="button button-primary button-full" type="submit">
-                Lock in answer
+                Lock in ranking
               </button>
             </form>
           </article>
@@ -191,6 +193,6 @@
       </footer>
     </div>
 
-    <script type="module" src="src/app.js"></script>
+    <script type="module" src="src/app.js?v=3"></script>
   </body>
 </html>

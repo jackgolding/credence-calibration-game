@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "A true-or-false confidence calibration game for GitHub Pages and Google Sheets.",
+  "description": "A search-ranking confidence calibration game for GitHub Pages and Google Sheets.",
   "scripts": {
     "generate:seo": "node scripts/generate-seo-questions.js",
     "test": "node --test",

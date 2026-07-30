@@ -14,7 +14,16 @@ const searches = [
 ];
 
 const careerSites = [
-  { name: "Seek", domains: ["seek.com.au", "seek.com"] },
+  {
+    name: "Seek",
+    domains: [
+      "au.seek.com",
+      "nz.seek.com",
+      "seek.co.nz",
+      "seek.com.au",
+      "seek.com",
+    ],
+  },
   { name: "JobsDB", domains: ["jobsdb.com"] },
   { name: "JobStreet", domains: ["jobstreet.com"] },
   { name: "Indeed", domains: ["indeed.com"] },
@@ -38,11 +47,17 @@ const careerSites = [
 ];
 
 const siteAliases = new Map([
+  ["dmw.gov.ph", "Department of Migrant Workers"],
+  ["eng.unimelb.edu.au", "University of Melbourne"],
   ["fairwork.gov.au", "Fair Work Ombudsman"],
+  ["mindcarespace.com", "Mind Care Space"],
   ["nationwidevisas.com", "Nationwide Visas"],
   ["poeajobs.ph", "POEA Jobs"],
   ["remotejobsinasia.com", "Remote Jobs in Asia"],
   ["remotejobsasia.com", "Remote Jobs Asia"],
+  ["studyonline.sunwayuniversity.edu.my", "Sunway University Online"],
+  ["ug.bschool.cuhk.edu.hk", "CUHK"],
+  ["uow.edu.my", "University of Wollongong Malaysia"],
   ["youthcentral.vic.gov.au", "Youth Central"],
 ]);
 
@@ -115,12 +130,13 @@ async function fetchResults(search, apiKey) {
       position: Number(result.position),
       title: result.title,
       link: result.link,
+      snippet: result.snippet || "",
     });
   }
 
-  if (rankedSites.length < 2) {
+  if (rankedSites.length < 3) {
     throw new Error(
-      `Only found ${rankedSites.length} recognized career sites for "${search.query}".`,
+      `Only found ${rankedSites.length} distinct organic results for "${search.query}".`,
     );
   }
 
@@ -150,22 +166,51 @@ function chooseComparisonSites(rankedSites) {
 }
 
 function makeQuestion(result, index, capturedAt) {
-  const [higher, lower] = result.comparisonSites;
-  const reverseStatement = index % 2 === 1;
-  const first = reverseStatement ? lower : higher;
-  const second = reverseStatement ? higher : lower;
-  const answer = first.position < second.position;
   const date = capturedAt.slice(0, 10);
+  const topResults = [...result.sites]
+    .sort((left, right) => left.position - right.position)
+    .slice(0, 3);
+
+  if (topResults.length < 3) {
+    throw new Error(`"${result.query}" does not have three saved results.`);
+  }
 
   return {
     id: `seo-${String(index + 1).padStart(2, "0")}`,
-    prompt: `For the Google search “${result.query}”, ${first.name} ranks higher than ${second.name}.`,
-    answer,
+    prompt: `Build the top 3 Google results for “${result.query}”`,
+    answer: true,
+    results: topResults.map((site, resultIndex) => ({
+      id: `seo-${String(index + 1).padStart(2, "0")}-result-${resultIndex + 1}`,
+      rank: site.position,
+      site: site.name,
+      title: site.title,
+      link: site.link,
+      displayUrl: displayUrl(site.link),
+      snippet:
+        site.snippet ||
+        `A result from ${site.name} for “${result.query}” in ${countryName(result.country)}.`,
+    })),
     explanation:
-      `${higher.name} ranked #${higher.position}, ahead of ${lower.name} at #${lower.position}, ` +
-      `in ${result.country.toUpperCase()} organic Google results captured via SerpApi on ${date}. ` +
+      `These were the top three organic Google results in ${countryName(result.country)}, ` +
+      `captured via SerpApi on ${date}. ` +
       "Search rankings can change over time.",
   };
+}
+
+function displayUrl(link) {
+  const url = new URL(link);
+  const path = url.pathname === "/" ? "" : url.pathname.replace(/\/$/, "");
+  return `${url.hostname.replace(/^www\./, "")}${path}`;
+}
+
+function countryName(country) {
+  return {
+    au: "Australia",
+    hk: "Hong Kong",
+    my: "Malaysia",
+    ph: "the Philippines",
+    sg: "Singapore",
+  }[country] || country.toUpperCase();
 }
 
 async function main() {
