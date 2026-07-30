@@ -1,11 +1,11 @@
-import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=7";
-import { appendGlossaryText, enableGlossaryInteractions } from "./glossary.js?v=7";
+import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=8";
+import { appendGlossaryText, enableGlossaryInteractions } from "./glossary.js?v=8";
 import {
   calibrationBuckets,
   isCorrectOrder,
   scoreAnswer,
   summarizeAttempts,
-} from "./scoring.js?v=7";
+} from "./scoring.js?v=8";
 
 const elements = {
   loading: document.querySelector("#loading-view"),
@@ -161,6 +161,15 @@ async function loadQuestions() {
 }
 
 async function loadLocalQuestions() {
+  const pending = window.__credenceQuestions;
+  if (pending) {
+    try {
+      return validateQuestions(await pending);
+    } catch (error) {
+      console.warn("Early question preload failed; retrying.", error);
+    }
+  }
+
   const controller = new AbortController();
   const timeout = window.setTimeout(
     () => controller.abort(),
@@ -169,7 +178,7 @@ async function loadLocalQuestions() {
 
   try {
     const response = await fetch(GAME_CONFIG.localQuestionsUrl, {
-      cache: "no-store",
+      cache: "force-cache",
       signal: controller.signal,
     });
     if (!response.ok) throw new Error("The demo questions could not be loaded.");
