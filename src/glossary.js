@@ -80,9 +80,12 @@ export function appendGlossaryText(element, text) {
   element.append(document.createTextNode(value.slice(cursor)));
 }
 
+const boundRoots = new WeakSet();
+
 export function enableGlossaryInteractions(root = document) {
-  if (root.dataset.glossaryBound === "true") return;
-  root.dataset.glossaryBound = "true";
+  // Document has no `.dataset` (only Elements do). Track binding separately.
+  if (boundRoots.has(root)) return;
+  boundRoots.add(root);
 
   root.addEventListener("click", (event) => {
     const term = event.target.closest(".glossary-term");
