@@ -1,11 +1,11 @@
-import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=8";
-import { appendGlossaryText, enableGlossaryInteractions } from "./glossary.js?v=8";
+import { APPS_SCRIPT_URL, GAME_CONFIG } from "./config.js?v=9";
+import { appendGlossaryText, enableGlossaryInteractions } from "./glossary.js?v=9";
 import {
   calibrationBuckets,
   isCorrectOrder,
   scoreAnswer,
   summarizeAttempts,
-} from "./scoring.js?v=8";
+} from "./scoring.js?v=9";
 
 const elements = {
   loading: document.querySelector("#loading-view"),
@@ -726,5 +726,9 @@ elements.resetButton.addEventListener("click", handleResetClick);
 elements.retryButton.addEventListener("click", loadQuestions);
 
 updateConfidence();
-enableGlossaryInteractions();
 void loadQuestions();
+try {
+  enableGlossaryInteractions();
+} catch (error) {
+  console.warn("Glossary interactions could not be enabled.", error);
+}
